@@ -458,35 +458,28 @@ However, the mathematical objective must remain primary.
 
 # 15. Curriculum
 
-The long-term curriculum is approximately:
+The curriculum is maintained at three levels:
 
-1. Mathematical foundations
-2. Discrete mathematics
-3. Combinatorics
-4. Probability
-5. Statistics
-6. Linear algebra
-7. Calculus
-8. Monte Carlo methods
-9. Stochastic processes
-10. Markov chains
-11. Graph theory
-12. Network theory
-13. Optimization
-14. Decision theory
-15. Markov Decision Processes
-16. Game theory
-17. Dynamical systems
-18. Control theory
-19. Information theory
-20. Bayesian inference
-21. Operations research
-22. Multi-Armed Bandits
-23. Causal inference
+1. [`docs/mathematical-body-of-knowledge.md`](docs/mathematical-body-of-knowledge.md)
+   defines the mathematical and computational fields Mathforge intends to
+   cover, independent of teaching order.
+2. [`docs/curriculum-modules.md`](docs/curriculum-modules.md) is the canonical
+   end-to-end module roadmap and records the dependency-aware study sequence.
+3. [`docs/initial-modules.md`](docs/initial-modules.md) gives additional detail
+   for the opening modules.
+
+The current roadmap spans foundational reasoning, discrete mathematics,
+algorithms, proof and verification, linear algebra, calculus, numerical
+methods, probability, statistics, simulation, graphs, stochastic processes,
+optimization, decision and game theory, dynamical and control systems,
+information, causality, concurrency, and integrated mathematical systems.
 
 This ordering is a roadmap, not a prison.
 
-The Agent may adjust ordering when prerequisites make another sequence pedagogically superior.
+The Agent may split, merge, revisit, or reorder modules when prerequisites or
+student evidence make another sequence pedagogically superior. Any structural
+change must be reflected in the canonical roadmap rather than existing only in
+conversation.
 
 # 16. Curriculum Planning
 

@@ -48,6 +48,23 @@ possible to reason about correctness instead of relying only on examples.
 tables; equivalences; implication; negation of propositions; direct proof,
 proof by contraposition, and proof by contradiction; invariants.
 
+### Mathematical proof and reasoning
+
+**Description.** The study of how mathematical claims are formulated,
+justified, refuted, and connected. Proof turns examples and intuition into a
+general argument whose assumptions and conclusions can be inspected.
+
+**Why study it.** Programming requires more than observing that code passes a
+few examples. Proof habits support loop invariants, termination arguments,
+correctness reviews, counterexample construction, test design, and the ability
+to distinguish a specification from evidence about one execution.
+
+**Planned topics.** Definitions and theorem statements; direct proof; proof by
+cases; contrapositive; contradiction; induction and strong induction;
+constructive existence; uniqueness; counterexamples; necessary and sufficient
+conditions; invariants; proof critique; correspondence between proofs and
+algorithms.
+
 ### Set theory and relations
 
 **Description.** The study of collections of objects and the relationships
@@ -91,6 +108,24 @@ experimentation.
 **Planned topics.** Mathematical induction; invariants; recurrences; recursive
 structures; summations; counting principles; relations; introductory trees and
 graphs.
+
+### Sequences, recurrences, and discrete summation
+
+**Description.** The study of discretely indexed quantities, cumulative sums,
+and rules that define each value from earlier values. These techniques form a
+bridge between discrete mathematics, algorithms, and asymptotic analysis.
+
+**Why study it.** Recursive programs, loop costs, divide-and-conquer algorithms,
+dynamic programs, simulations over time, and many combinatorial structures are
+naturally described by recurrences. Summation techniques turn repeated work
+into analyzable expressions and often reveal a faster algorithm.
+
+**Planned topics.** Arithmetic, geometric, and harmonic sequences; sigma
+notation; finite and infinite sums; telescoping; multiple sums; finite
+differences; floors and ceilings; first- and higher-order recurrences; linear
+recurrences; characteristic roots; full-history recurrences; recurrence trees;
+special sequences; asymptotic estimates; computational verification of
+identities.
 
 ### Combinatorics
 
@@ -195,6 +230,24 @@ Gaussian elimination; linear independence; basis and dimension; linear
 transformations; determinants; eigenvalues and eigenvectors; orthogonality;
 projections; matrix decompositions.
 
+### Numerical linear algebra
+
+**Description.** The study of reliable and efficient algorithms for linear
+systems, matrix factorizations, least-squares problems, eigenvalues, and other
+linear-algebra computations on finite-precision machines.
+
+**Why study it.** A mathematically valid matrix formula may be slow or unstable
+when implemented directly. Numerical linear algebra supports graphics,
+statistics, optimization, scientific simulation, Markov models, PageRank, and
+machine learning while making error, conditioning, sparsity, and computational
+cost explicit.
+
+**Planned topics.** Gaussian and Gauss-Jordan elimination; pivoting;
+conditioning; residuals; stability; sparse and dense representations; LU, QR,
+and Cholesky factorizations; least squares; Gram-Schmidt and its numerical
+limitations; power iteration; numerical eigenvalue methods; iterative linear
+solvers at an introductory level.
+
 ### Differential and integral calculus
 
 **Description.** The study of change and accumulation through limits,
@@ -264,6 +317,24 @@ conditioning; stability; root finding; interpolation; numerical differentiation
 and integration; numerical solution of linear systems and differential
 equations.
 
+### Scientific computing
+
+**Description.** The disciplined use of mathematical models, numerical
+algorithms, simulation, experiments, and software to investigate systems that
+cannot be understood through symbolic work alone.
+
+**Why study it.** Scientific computing connects mathematics to executable
+experiments. It develops reproducibility, error budgets, validation against
+known cases, sensitivity analysis, parameter sweeps, and the ability to tell a
+property of the modeled system from an artifact of the implementation.
+
+**Planned topics.** Model formulation; units and dimensional analysis;
+discretization; verification versus validation; parameter sweeps; sensitivity
+analysis; reproducible experiments; benchmark construction; reference cases;
+error propagation; experiment logs; visualization as diagnosis; computational
+notebooks conceptually, while repository implementations remain ordinary
+Python modules.
+
 ## 3. Uncertainty, data, and randomness
 
 ### Probability theory
@@ -281,7 +352,10 @@ algorithms, reliability, statistics, learning, and decision-making.
 probability; independence; Bayes' theorem; random variables; expectation,
 variance, and covariance; discrete and continuous distributions; joint
 distributions; distribution and density functions; transformations of random
-variables; law of large numbers; central limit theorem.
+variables; Bernoulli, binomial, geometric, Poisson, uniform, exponential,
+normal, gamma, and related distribution families; probability-generating,
+moment-generating, and characteristic functions at appropriate depths; law of
+large numbers; central limit theorem.
 
 ### Statistics
 
@@ -338,7 +412,8 @@ happen?” but also “when?”, “in what order?”, and “along which trajec
 
 **Planned topics.** Bernoulli processes; random walks; Poisson processes;
 waiting times; birth-and-death processes; hazard rates; martingales at a
-conceptual level.
+conceptual level; stationary processes; branching processes; renewal processes;
+Brownian motion; diffusion processes; covariance functions and trajectories.
 
 ### Markov chains
 
@@ -365,6 +440,21 @@ small changes in load can produce large changes in waiting time.
 
 **Planned topics.** Arrival and service processes; utilization; Little's law;
 simple queues; queueing networks; priorities; discrete-event simulation.
+
+### Renewal and reliability theory
+
+**Description.** The study of systems that repeatedly reset after events and of
+the probability that components or services continue to function over time.
+
+**Why study it.** Renewal and reliability models apply to failures, repairs,
+caches, maintenance, inventory replenishment, customer return, and service
+lifetime. They connect waiting-time distributions, hazard rates, simulation,
+queues, and operational decisions.
+
+**Planned topics.** Interarrival and lifetime distributions; renewal counting
+processes; renewal reward ideas; residual life; survival functions; hazard
+rates; series and parallel reliability; repairable systems; availability;
+failure simulation; reliability block models.
 
 ### Causal inference
 
@@ -394,7 +484,10 @@ optimization.
 
 **Planned topics.** Directed and undirected graphs; weights; degrees; paths;
 cycles; connectivity; components; trees; traversals; shortest paths;
-topological sorting; centrality; flows and cuts.
+topological sorting; Euler tours; Hamilton cycles; spanning trees; minimum
+spanning trees; matchings; independent sets; cliques; edge and vertex coloring;
+planarity; directed graphs; centrality; flows and cuts; cycle and cut spaces;
+graph representations and classical complexity boundaries.
 
 ### Network science
 
@@ -519,7 +612,7 @@ causing instability.
 control; feedback; stability; proportional, integral, and derivative control;
 adaptive controllers at a later stage.
 
-## 5. Algorithms and computational problem-solving
+## 5. Algorithms, programming theory, and computational problem-solving
 
 The subjects in this section are computer science disciplines rather than
 branches of mathematics in the narrowest sense. They belong in Mathforge
@@ -599,6 +692,86 @@ problems; reductions; the classes P and NP; NP-completeness; parameterized
 thinking at an introductory level; space complexity; computability and
 undecidability at a conceptual level.
 
+### Formal methods and program verification
+
+**Description.** The use of mathematical specifications and proof techniques to
+state what programs should do and justify that implementations satisfy those
+statements.
+
+**Why study it.** Tests demonstrate behavior on selected executions; formal
+reasoning addresses all executions covered by stated assumptions. The field
+improves API contracts, invariant design, safety-critical logic, refactoring,
+and the ability to find specification errors before implementation grows.
+
+**Planned topics.** Preconditions and postconditions; assertions; state
+relations; refinement; weakest-precondition ideas at a conceptual level; loop
+invariants; termination variants; soundness and completeness; specification
+composition; model checking at an introductory level; the complementary roles
+of proof, testing, and static analysis.
+
+### Programming language semantics and recursive definitions
+
+**Description.** The study of how programming-language constructs acquire
+precise meaning and how recursive data and programs are defined from smaller
+instances.
+
+**Why study it.** Semantics clarifies scope, mutation, aliasing, control flow,
+recursion, and composition. It helps programmers reason about code independently
+of surface syntax, design interpreters and domain-specific languages, and avoid
+bugs caused by an unclear execution model.
+
+**Planned topics.** Expressions and state; substitution; scope and binding;
+operational and denotational viewpoints at an introductory level; arrays and
+records; loops; procedures; recursion; recursive data; structural induction;
+fixed-point ideas; parsing; interpreters; refinement between representations.
+
+### Theory of computation and formal languages
+
+**Description.** The study of abstract machines, languages, computability, and
+the fundamental limits of algorithms.
+
+**Why study it.** This field explains the structures behind regular
+expressions, parsers, protocols, compilers, state machines, and decision
+procedures. It also distinguishes a difficult computation from a task that no
+general algorithm can solve.
+
+**Planned topics.** Alphabets and formal languages; deterministic and
+nondeterministic finite automata; regular expressions; grammars; pushdown
+automata; Turing machines conceptually; decidability; reductions; the halting
+problem; connections among automata, state machines, and parsers.
+
+### Concurrency and interaction models
+
+**Description.** The study of systems whose components execute, communicate,
+or react without a single simple sequential order.
+
+**Why study it.** Real programs coordinate tasks, messages, buffers, services,
+and shared state. Mathematical models of concurrency expose races, deadlocks,
+ordering constraints, safety properties, and liveness properties that ordinary
+single-run testing may miss.
+
+**Planned topics.** Interleavings; concurrent composition; shared and message-
+passing state; atomicity; synchronization; producer-consumer systems; buffers;
+deadlock; safety and liveness; monitors; channels; broadcast; event-driven and
+reactive systems; deterministic simulation of concurrent schedules.
+
+### Computational experimentation and benchmark design
+
+**Description.** The study of how to design computational experiments and
+benchmarks that measure the intended capability rather than a convenient but
+misleading proxy.
+
+**Why study it.** Simulators, algorithms, and intelligent systems need
+evaluation protocols that are reproducible, discriminating, and connected to
+real tasks. Good benchmark design prevents data leakage, ambiguous success
+criteria, overfitting to examples, and conclusions unsupported by the evidence.
+
+**Planned topics.** Research questions and hypotheses; scenario-grounded tasks;
+unit-level versus system-level evaluation; baselines; controls; ablations;
+metrics; calibration; leakage and contamination; dataset and case selection;
+reproducibility; error analysis; benchmark validity; project-level evaluation;
+human-in-the-loop experiments.
+
 ## 6. How this map will be used
 
 Mathforge challenges do not need to belong to a single field. A module on
@@ -615,3 +788,7 @@ Algorithmic practice will be longitudinal. Correctness, invariants,
 representation choices, and computational cost will recur throughout the
 mathematical modules rather than being confined to a single interview-preparation
 unit.
+
+The complete module order that operationalizes this body of knowledge lives in
+[`docs/curriculum-modules.md`](curriculum-modules.md). Local book routing and
+solution warnings live in [`books/CATALOG.md`](../books/CATALOG.md).

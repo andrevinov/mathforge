@@ -7,7 +7,9 @@ knowledge, the unit of learning here is the **module**: a deliberate combination
 of mathematical and algorithmic material from different fields, organized
 around a capability that can be demonstrated in programs.
 
-This is not yet the complete list of project modules. The sequence ends when
+This document gives the detailed rationale for Modules 1–9. The complete
+curriculum sequence is maintained in
+[`curriculum-modules.md`](curriculum-modules.md). The sequence here ends when
 there is enough foundation to open later tracks in advanced algorithms and data
 structures, statistics, linear algebra, Markov chains, graphs, optimization,
 and stochastic processes.
@@ -408,5 +410,7 @@ without losing the connections between them:
 - greedy algorithms, dynamic programming, and advanced backtracking;
 - graph algorithms and computational complexity.
 
-These tracks will be specified after the initial modules have produced evidence
+The planned continuation of these tracks is recorded in the
+[`complete module roadmap`](curriculum-modules.md). Its ordering and module
+boundaries remain subject to revision after the initial modules produce evidence
 about the most appropriate pace, difficulties, and depth.

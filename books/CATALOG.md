@@ -352,3 +352,31 @@ When a book is added, removed, or replaced:
 Do not rename externally titled works merely to normalize their language. File
 renaming may be considered separately when it improves maintainability and does
 not break references.
+
+## Current curriculum source gaps
+
+The local collection gives especially strong coverage of discrete mathematics,
+proof, programming theory, algorithms, combinatorics, probability, random
+processes, graph theory, and linear algebra. It does not yet provide a dedicated
+primary textbook for every field in the complete roadmap.
+
+The most important current gaps are:
+
+- geometry and trigonometry;
+- abstract algebra;
+- automata, formal languages, and computability;
+- calculus, differential equations, and mathematical analysis;
+- numerical analysis and scientific computing;
+- mathematical statistics and experimental design;
+- Bayesian inference and causal inference;
+- network science;
+- optimization and operations research;
+- decision theory, game theory, MDPs, and bandits;
+- dynamical systems and control theory;
+- information theory;
+- concurrency and distributed or reactive systems beyond Hehner's introductory
+  treatment.
+
+A source gap does not remove a module from the roadmap. Before planning such a
+module, first recheck the catalog for newly added books, then select current,
+authoritative external sources according to the book-first research policy.
