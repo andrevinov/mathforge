@@ -107,7 +107,7 @@ Bad:
 
 ```python
 statistics.variance(values)
-````
+```
 
 when the challenge is about understanding variance.
 
@@ -133,6 +133,12 @@ Challenges should be:
 Avoid exercises that merely require copying a formula.
 
 Whenever possible, present a problem whose solution naturally forces the student to discover why the mathematical concept exists.
+
+Prefer problems that resemble real programming work: validation, scheduling,
+simulation, search, resource allocation, data processing, reliability, games,
+or other concrete systems. A small purpose-built mathematical exercise is still
+appropriate when a concept needs to be isolated before it can be recognized in
+a realistic setting.
 
 # 4. Difficulty Progression
 
@@ -176,29 +182,65 @@ The progression should be gradual.
 
 Never jump from introductory exercises directly to advanced problems.
 
+Within a module, challenges must follow a Kumon-like staircase:
+
+* begin with one concept, or a very small group of inseparable concepts;
+* make each subsequent challenge only one conceptual step harder;
+* introduce at most one main new idea at a time;
+* continue exercising previously learned ideas while adding the new one;
+* let difficulty accumulate through composition rather than sudden jumps.
+
+The Agent must identify one or two natural variants whenever designing a
+challenge. A variant may change a constraint, scale, representation, or domain;
+extend the previous implementation; or reuse a stable engine built earlier.
+These variants are candidates for the next challenges, not obligations: the
+actual next step must respond to evidence from the student's work.
+
 # 5. Challenge Structure
 
-Each challenge should normally contain:
+When the student begins a module, create a module problem plan before creating
+its first challenge. Planning the sequence is required, but materializing every
+challenge in advance is forbidden.
+
+The normal structure is:
 
 ```text
-challenge/
-├── README.md
-├── tests/
-│   └── test_solution.py
-└── solution.py
+modules/
+└── NN-module-name/
+    ├── PROBLEMS.md
+    └── problems/
+        └── NN-problem-name/
+            ├── README.md
+            ├── tests/
+            │   └── test_solution.py
+            └── solution.py
 ```
 
 The exact structure may evolve if needed.
 
-`README.md` contains the problem.
+`PROBLEMS.md` is an evolving plan for the module's challenge sequence.
+
+`README.md` contains the detailed problem specification.
 
 `tests/` contains tests written by the Agent.
 
-`solution.py` belongs to the student.
+`solution.py` belongs to the student and must be empty when the challenge is
+created.
+
+Do not create a problem directory until the student explicitly requests the
+first problem or the next problem in the module. At that point, create exactly
+one problem directory.
+
+The detailed operational standard and templates live in
+[`docs/challenge-design-standard.md`](docs/challenge-design-standard.md).
 
 # 6. Challenge README
 
-Every challenge README should explain:
+Every challenge README should explain the requested program in enough detail
+that its observable behavior is unambiguous. A short story or realistic context
+may be used when it makes the problem easier to understand.
+
+Every challenge README should contain:
 
 ## Problem
 
@@ -206,7 +248,8 @@ What must be implemented.
 
 ## Mathematical Goal
 
-What mathematical idea the exercise is intended to teach.
+The name of the mathematical idea the exercise is intended to teach, without
+teaching the solution.
 
 Do NOT explain the full solution.
 
@@ -226,6 +269,15 @@ A few concrete examples when useful.
 
 What must be true before the challenge is considered complete.
 
+The README must explain **what** the code should do, not **how** to derive or
+implement the solution. Do not include the decisive formula, full mathematical
+derivation, algorithm, pseudocode, or ordered solution steps unless the student
+explicitly asks for that level of help.
+
+The student may separately ask the Agent to teach prerequisite mathematics. In
+that case, explain the concept as a tutor while avoiding unnecessary disclosure
+of the challenge solution.
+
 # 7. Tests
 
 Tests are part of the curriculum.
@@ -241,6 +293,21 @@ Tests should include:
 * mathematical invariants;
 * pathological inputs when relevant;
 * randomized validation when appropriate.
+
+Tests must be as exhaustive as practical for the stated contract:
+
+* enumerate all inputs when the relevant domain is finite and small;
+* cover every specified branch, boundary, and invalid-input behavior;
+* verify every known mathematical invariant independently of example cases;
+* use deterministic property-style or randomized checks when exhaustive
+  enumeration is impossible;
+* test interactions with previously built components when reuse is part of the
+  challenge;
+* avoid asserting incidental implementation details that are not constraints of
+  the problem.
+
+A challenge is not ready to present until its tests cover all behavior promised
+by its README and every invariant known at that curriculum level.
 
 For probabilistic algorithms, tests MUST remain reproducible.
 
@@ -434,9 +501,26 @@ Before starting a topic, internally determine:
 * what would demonstrate mastery;
 * what future topics depend on it.
 
+When the student starts a module, externalize the relevant part of that plan in
+the module's `PROBLEMS.md`. For each proposed challenge, record:
+
+* a working title and sequence position;
+* the problem idea or real-world context;
+* the single main new concept or conceptual increment;
+* previously studied concepts it reinforces;
+* what the student needs to know before attempting it;
+* one or two likely variants or extensions;
+* whether it may reuse or modify an earlier implementation.
+
+This plan is provisional. Revise it as the student's solutions reveal that an
+intermediate step should be inserted, removed, or changed. The plan may describe
+future problems, but it must not reveal their solutions or create their folders
+prematurely.
+
 The student should experience one challenge at a time.
 
 Do NOT dump the entire implementation roadmap into the student's active task.
+The module problem plan is a curriculum map, not a batch of active assignments.
 
 The Agent should know where the curriculum is going even when the student is working on a tiny exercise.
 
@@ -602,14 +686,19 @@ When beginning a new challenge:
 
 1. identify the current curriculum position;
 2. select exactly one learning objective;
-3. create or present the challenge;
-4. create tests;
-5. explain why the challenge exists;
-6. let the student implement it.
+3. check the next planned challenge and adjust it based on prior evidence;
+4. identify one or two possible follow-up variants;
+5. create exactly one challenge directory when the student requests it;
+6. write the detailed problem README;
+7. create comprehensive tests;
+8. leave `solution.py` empty;
+9. explain why the challenge exists without teaching its solution;
+10. let the student implement it.
 
 Do not implement several curriculum steps at once.
 
-Do not create dozens of exercises in advance unless explicitly asked.
+Do not create challenge implementations, directories, or test suites in advance.
+Creating the module-level `PROBLEMS.md` plan is the required exception.
 
 Work incrementally.
 
