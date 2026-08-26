@@ -1,0 +1,25 @@
+[project]
+name = "mathforge"
+version = "0.1.0"
+description = "A deliberate-practice lab for mastering applied mathematics through pure-Python challenges, test-driven exercises, and progressively integrated simulations."
+authors = [
+    {name = "André Carvalho",email = "me@andrev.me"}
+]
+license = {text = "MIT"}
+readme = "README.md"
+requires-python = ">=3.14"
+dependencies = [
+]
+
+
+[build-system]
+requires = ["poetry-core>=2.0.0,<3.0.0"]
+build-backend = "poetry.core.masonry.api"
+
+[dependency-groups]
+dev = [
+    "pytest (>=9.1.1,<10.0.0)",
+    "ruff (>=0.16.4,<0.17.0)",
+    "pylance (>=10.0.0,<11.0.0)",
+    "coverage (>=7.15.4,<8.0.0)"
+]
