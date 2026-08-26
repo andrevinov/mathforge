@@ -2,7 +2,7 @@
 
 ## Plan status
 
-**Module status:** Ready to begin
+**Module status:** Active
 
 **Initial challenge count:** 25
 
@@ -105,7 +105,7 @@ The student must eventually demonstrate the ability to:
 
 ### 01 — Feature Release Gate
 
-**Status:** Planned
+**Status:** Active
 
 **Problem idea:** Implement the decision rule used by a deployment service to
 decide whether a feature may be released from a few Boolean facts such as
@@ -123,8 +123,8 @@ expression.
 **Why this step is next:** It exposes the smallest useful mathematical object
 in the module—a proposition—inside an ordinary programming rule.
 
-**Likely variants:** Add one emergency exception; transfer the rule shape to an
-account-access decision.
+**Likely variants:** Change which requirements the emergency override bypasses;
+transfer the rule shape to an account-access decision.
 
 **Reuse:** Standalone. Later problems may call the completed rule without
 depending on its implementation.
