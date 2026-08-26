@@ -217,6 +217,7 @@ __marimo__/
 # Streamlit
 .streamlit/secrets.toml
 
-# Books folder
+# Local reference library: catalogs are versioned, source books stay local.
 books/*
 !books/CATALOG.md
+!books/MODULE_COVERAGE.md

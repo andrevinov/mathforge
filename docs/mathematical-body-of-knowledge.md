@@ -791,4 +791,6 @@ unit.
 
 The complete module order that operationalizes this body of knowledge lives in
 [`docs/curriculum-modules.md`](curriculum-modules.md). Local book routing and
-solution warnings live in [`books/CATALOG.md`](../books/CATALOG.md).
+solution warnings live in [`books/CATALOG.md`](../books/CATALOG.md), and
+module-level source sufficiency is tracked in
+[`books/MODULE_COVERAGE.md`](../books/MODULE_COVERAGE.md).

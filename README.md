@@ -9,3 +9,4 @@ A deliberate-practice lab for mastering applied mathematics through pure-Python 
 - [Detailed Initial Modules](docs/initial-modules.md)
 - [Challenge Design Standard](docs/challenge-design-standard.md)
 - [Local Book Catalog](books/CATALOG.md)
+- [Module Source Coverage](books/MODULE_COVERAGE.md)

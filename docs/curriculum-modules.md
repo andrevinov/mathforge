@@ -115,8 +115,9 @@ recommendations depend on correct conditioning and base rates.
 **Main contents.** Conditional probability; independence; total probability;
 Bayes' theorem; partitions; probability trees; conditional counting.
 
-**Primary local sources.** Grimmett and Stirzaker Chapters 1–3; Levin for the
-discrete and combinatorial prerequisites.
+**Primary local sources.** Grimmett and Stirzaker Chapters 1–3; Chernoff and
+Moses Chapters 3 and 5–6 for Bayesian decision examples; Levin for the discrete
+and combinatorial prerequisites.
 
 ### Module 06 — Random Variables: Measuring Uncertain Outcomes
 
@@ -161,9 +162,8 @@ when reported as isolated averages without uncertainty or experimental control.
 bias; standard error; sampling distributions; introductory confidence
 intervals; streaming summaries; numerical stability.
 
-**Primary local sources.** Grimmett and Stirzaker for probability foundations;
-the scientific-discovery paper for evaluation motivation. No dedicated local
-statistics textbook is currently cataloged.
+**Primary local sources.** Pestman Chapters I–II; Chernoff and Moses Chapters
+2–3 and 7; the scientific-discovery paper for evaluation motivation.
 
 ### Module 09 — Monte Carlo I: Computing Through Experimentation
 
@@ -178,7 +178,8 @@ large numbers; introductory central limit theorem; confidence intervals;
 exact-versus-approximate selection.
 
 **Primary local sources.** Grimmett and Stirzaker's probability and simulation
-material; *Concrete Mathematics* Chapter 8.
+material; *Concrete Mathematics* Chapter 8; White Chapter 4 for using
+reproducible Monte Carlo studies to evaluate adaptive algorithms.
 
 **Phase I integration gate.** Build a finite system that has an exact solver, a
 reproducible sampler, a statistical report, and a measured Monte Carlo
@@ -275,8 +276,12 @@ groups; subgroups; symmetry; homomorphisms; rings; fields; finite fields at an
 introductory level.
 
 **Primary local sources.** Cummings' introduction to group theory; *Concrete
-Mathematics* for modular examples. No dedicated local abstract-algebra text is
-currently cataloged.
+Mathematics* for modular examples; Satake for a far-later extension into
+algebraic groups, Jordan structures, Lie algebras, and advanced symmetry;
+Sokolov for a different advanced bridge through non-associative algebras,
+symmetries, and integrable differential equations. Both advanced monographs
+assume substantial prerequisites, so a dedicated introductory source for
+groups, rings, fields, finite fields, and homomorphisms is still needed.
 
 ### Module 16 — Generating Functions and Advanced Counting
 
@@ -368,7 +373,9 @@ growth; decision and optimization problems; reductions; P and NP;
 NP-completeness; lower bounds; decidability and undecidability conceptually.
 
 **Primary local sources.** Parberry and Gasarch Chapters 3, 12, and 13;
-*Concrete Mathematics* Chapter 9.
+*Concrete Mathematics* Chapter 9; Pettorossi Chapters 5–6 for Turing machines,
+decidability, and undecidability; Lattimore and Szepesvári Chapters 13–17 for
+lower-bound reasoning in a specialized probabilistic setting.
 
 ### Module 22 — Automata, Formal Languages, and Program Semantics
 
@@ -383,8 +390,11 @@ clear reasoning about language behavior.
 grammars; pushdown machines; parsing; expressions and state; substitution;
 scope; recursion; fixed-point ideas; Turing machines conceptually.
 
-**Primary local sources.** Hehner Chapters 3, 5–7. No dedicated local automata
-or programming-languages textbook is currently cataloged.
+**Primary local sources.** Pettorossi Chapters 1–6 for grammars, finite and
+pushdown automata, parsing, Turing machines, computability, and decidability;
+Hehner Chapters 3 and 5–7 for expressions, substitution, scope, recursion,
+fixed-point reasoning, and program semantics; Parberry and Gasarch for
+complexity and algorithm-design bridges.
 
 **Phase II integration gate.** Build a small language or constraint engine with
 a formal specification, parser, data structures, correctness argument,
@@ -405,8 +415,8 @@ transformations.
 distance; angles; sine and cosine; polar coordinates; dot products; projections;
 2D transformations.
 
-**Primary local sources.** Hefferon Chapter 1's linear geometry. No dedicated
-local geometry or trigonometry text is currently cataloged.
+**Primary local sources.** Thomas and Finney's preliminaries and Chapters 9–11;
+Hefferon Chapter 1's linear geometry.
 
 ### Module 24 — Linear Systems and Gaussian Elimination
 
@@ -452,8 +462,8 @@ LU, QR, and Cholesky ideas; Gram-Schmidt; least squares; sparse matrices;
 complexity and stability.
 
 **Primary local sources.** Hefferon's accuracy, matrix-operation, projection,
-and line-of-best-fit topics. No dedicated local numerical-linear-algebra text is
-currently cataloged.
+and line-of-best-fit topics; van Kan, Segal, and Vermolen Chapter 9 for direct,
+iterative, sparse, and preconditioned linear solvers.
 
 ### Module 27 — Eigenvalues, Spectral Methods, and Matrix Dynamics
 
@@ -469,7 +479,9 @@ diagonalization; power iteration; spectral interpretation; repeated
 transformation; stability.
 
 **Primary local sources.** Hefferon Chapters 4–5 and the topics on Markov
-chains, PageRank, stable populations, and coupled oscillators.
+chains, PageRank, stable populations, and coupled oscillators; Engelberg
+Chapters 9–10 and Zabczyk Part I for state-space dynamics, stability,
+controllability, and observability applications.
 
 ### Module 28 — Calculus I: Limits, Change, and Derivatives
 
@@ -484,8 +496,8 @@ algorithms.
 rules; linear approximation; rates of change; numerical differentiation;
 single-variable optimization.
 
-**Primary local sources.** Hefferon provides applications and assumes calculus,
-but no dedicated local calculus textbook is currently cataloged.
+**Primary local sources.** Thomas and Finney Chapters 1–3 and 6; Loomis and
+Sternberg Chapter 3 as a later rigorous reference.
 
 ### Module 29 — Calculus II: Accumulation, Integration, and Series
 
@@ -500,8 +512,9 @@ approximation and computation.
 substitution; improper integrals; numerical quadrature; Taylor series; power
 series; convergence tests; approximation error.
 
-**Primary local sources.** *Concrete Mathematics* offers discrete analogies, but
-no dedicated local calculus textbook is currently cataloged.
+**Primary local sources.** Thomas and Finney Chapters 4–8; *Concrete
+Mathematics* for discrete analogies; Loomis and Sternberg Chapter 8 as a later
+rigorous reference.
 
 ### Module 30 — Multivariable Calculus and Gradients
 
@@ -514,8 +527,8 @@ control, and physical simulation operate in multidimensional parameter spaces.
 Jacobians; Hessians; multiple integrals; constrained change; chain rule in many
 variables; numerical gradient checks.
 
-**Primary local sources.** Hefferon supports the linear-algebra prerequisites;
-no dedicated local multivariable-calculus text is currently cataloged.
+**Primary local sources.** Thomas and Finney Chapters 12–14; Loomis and
+Sternberg Chapters 3 and 8; Hefferon for the linear-algebra prerequisites.
 
 ### Module 31 — Differential Equations and Numerical Evolution
 
@@ -529,8 +542,13 @@ and control simulations often begin as differential equations.
 systems; phase plots; Euler methods; Runge-Kutta ideas; step-size error;
 stability; conservation checks.
 
-**Primary local sources.** Hefferon's coupled-oscillator topic supplies a linear
-application. No dedicated local differential-equations text is cataloged.
+**Primary local sources.** Thomas and Finney Section 6.11–6.12 for the entry;
+Loomis and Sternberg Chapter 6; Perko for qualitative ODE theory; van Kan,
+Segal, and Vermolen Chapters 10–12 for numerical evolution of PDE models;
+Hefferon's coupled-oscillator application; Engelberg and Zabczyk for controlled
+linear and nonlinear differential-equation systems; Sokolov only as a
+far-later extension into integrable ODEs and PDEs, conservation laws, and
+symmetry methods.
 
 ### Module 32 — Mathematical and Numerical Analysis
 
@@ -545,9 +563,9 @@ convergence; continuity; error bounds; root finding; interpolation;
 conditioning; backward error; stable reformulation; convergence-rate
 experiments.
 
-**Primary local sources.** *Concrete Mathematics* Chapter 9 and Hefferon's
-accuracy topics provide bridges. No dedicated local analysis or numerical-
-analysis text is currently cataloged.
+**Primary local sources.** Loomis and Sternberg Chapters 3–4 and 8; van Kan,
+Segal, and Vermolen Chapters 3–12; *Concrete Mathematics* Chapter 9 and
+Hefferon's accuracy topics provide discrete and linear bridges.
 
 **Phase III integration gate.** Build a geometric or physical simulator that
 uses linear algebra, calculus, numerical evolution, convergence tests, and an
@@ -567,7 +585,8 @@ lifetimes, physical measurements, finance, queues, and simulation.
 normal, gamma, and related families; expectation and variance; numerical
 integration; inverse transforms.
 
-**Primary local sources.** Grimmett and Stirzaker Chapters 4–5.
+**Primary local sources.** Grimmett and Stirzaker Chapters 4–5; Pestman Chapter
+I.
 
 ### Module 34 — Joint Probability and Transformations
 
@@ -581,7 +600,8 @@ derived quantities whose risks cannot be analyzed independently.
 correlation; independence; transformations; Jacobian method; sums and ratios;
 multivariate normal ideas.
 
-**Primary local sources.** Grimmett and Stirzaker Chapters 2–5 and 7.
+**Primary local sources.** Grimmett and Stirzaker Chapters 2–5 and 7; Pestman
+Chapters I and VIII.
 
 ### Module 35 — Convergence and Limit Theorems
 
@@ -595,8 +615,11 @@ and stochastic algorithms depend on precise forms of convergence.
 theorem; concentration intuition; Slutsky-style composition conceptually;
 simulation diagnostics.
 
-**Primary local sources.** Grimmett and Stirzaker Chapter 7; *Concrete
-Mathematics* Chapter 8.
+**Primary local sources.** Grimmett and Stirzaker Chapter 7; Pestman Chapter I;
+*Concrete Mathematics* Chapter 8; Lattimore and Szepesvári Chapter 5 for
+concentration of measure and later chapters for its repeated application;
+Cover and Thomas Chapters 3 and 11 for asymptotic equipartition, large
+deviations, and information-theoretic asymptotics.
 
 ### Module 36 — Statistical Estimation and Likelihood
 
@@ -610,9 +633,9 @@ only after uncertainty, bias, and model assumptions are quantified.
 method of moments; likelihood; maximum likelihood; Fisher-information intuition;
 identifiability.
 
-**Primary local sources.** Grimmett and Stirzaker provide probability
-prerequisites. No dedicated local mathematical-statistics textbook is currently
-cataloged.
+**Primary local sources.** Pestman Chapters I–II; Chernoff and Moses Chapters
+7–10; Ding for randomization-based, propensity-weighted, matching, and doubly
+robust estimators; Grimmett and Stirzaker for probability prerequisites.
 
 ### Module 37 — Confidence, Hypothesis Tests, and Experimental Design
 
@@ -626,8 +649,15 @@ simulation comparisons fail when sampling and stopping decisions are ignored.
 test statistics; p-values; power; Type I and II errors; multiple testing;
 randomization; controls; sample-size planning; sequential caveats.
 
-**Primary local sources.** The scientific-discovery paper motivates evaluation
-structure. No dedicated local statistics text is currently cataloged.
+**Primary local sources.** Pestman Chapters III and V; Chernoff and Moses
+Chapters 7, 9, and 10; Ding Parts II and III for Fisher randomization tests,
+Neymanian repeated-sampling inference, stratification, rerandomization,
+regression adjustment, matched designs, and observational comparisons; White
+Chapters 2 and 7 for adaptive A/B testing and its operational hazards;
+Lattimore and Szepesvári Chapter 21 for optimal design in least-squares
+estimation; the scientific-discovery paper for evaluation structure. Targeted
+external research remains useful for modern multiple-testing procedures and
+prospective power calculations.
 
 ### Module 38 — Regression and Exploratory Data Analysis
 
@@ -641,8 +671,10 @@ multivariable data that require more than isolated averages.
 regression; residuals; least squares; transformations; regularization intuition;
 logistic-regression concepts; prediction versus explanation.
 
-**Primary local sources.** Hefferon's line-of-best-fit topic supplies linear
-foundations. No dedicated local regression text is currently cataloged.
+**Primary local sources.** Pestman Chapters IV, VII, and VIII; Hefferon's
+line-of-best-fit topic for linear foundations; Ding for regression adjustment,
+propensity methods, balance diagnostics, and repeated warnings against reading
+causal effects directly from associational regressions.
 
 ### Module 39 — Bayesian Inference
 
@@ -656,8 +688,14 @@ forecasting, personalization, belief-bearing agents, and sequential evidence.
 posterior predictive; sequential updating; hierarchical models; model
 comparison; calibration.
 
-**Primary local sources.** Grimmett and Stirzaker provide probability
-foundations. No dedicated local Bayesian-inference text is cataloged.
+**Primary local sources.** Pestman's Bayesian-estimation section; Chernoff and
+Moses Chapters 5–6; Box and Tiao for prior construction, nuisance parameters,
+Normal-theory inference, robustness, hierarchical designs, multivariate
+models, transformations, and model criticism; Grimmett and Stirzaker for
+probability foundations; Lattimore and Szepesvári Chapters 34–36 for sequential
+Bayesian learning, Bayesian bandits, and Thompson sampling; Sell for advanced
+computation and posterior-predictive applications. Targeted current references
+remain useful for modern model-comparison and calibration workflows.
 
 ### Module 40 — Monte Carlo II: Variance Reduction and Rare Events
 
@@ -671,8 +709,12 @@ simulations require better estimators rather than merely larger loops.
 importance sampling; rejection sampling; rare-event estimation; bootstrap;
 effective sample cost.
 
-**Primary local sources.** Grimmett and Stirzaker's simulation material. No
-dedicated local advanced Monte Carlo text is currently cataloged.
+**Primary local sources.** Grimmett and Stirzaker's simulation material;
+Liang, Liu, and Carroll Chapter 1 for Monte Carlo integration, importance
+sampling, and acceptance-rejection generation and Chapter 6 for advanced
+importance weighting; Pestman Chapter VII for bootstrap; Sell for advanced
+sampling context. Control variates, antithetic variables, stratified sampling,
+and systematic rare-event methods still lack a dedicated local source.
 
 ### Module 41 — MCMC and Sequential Monte Carlo
 
@@ -686,8 +728,12 @@ cannot be normalized or sampled directly.
 burn-in and mixing; autocorrelation; diagnostics; particle filtering;
 resampling; degeneracy.
 
-**Primary local sources.** Grimmett and Stirzaker support the probability and
-Markov prerequisites. No dedicated local MCMC text is cataloged.
+**Primary local sources.** Liang, Liu, and Carroll Chapters 2–8 as the principal
+systematic source for Gibbs, Metropolis-Hastings, auxiliary-variable,
+population-based, stochastic-approximation, and adaptive MCMC; Sell Chapters
+2–4 for research-level MCMC and parallel sampling; Grimmett and Stirzaker for
+probability and Markov prerequisites. Standard Sequential Monte Carlo and
+particle filtering still lack a dedicated local source.
 
 ### Module 42 — Scientific Computing, Benchmarks, and Discovery Evaluation
 
@@ -703,7 +749,9 @@ scenario-grounded evaluation; benchmark validity; leakage; calibration;
 reproducibility; error analysis; human-in-the-loop experiments.
 
 **Primary local sources.** *Evaluating Large Language Models in Scientific
-Discovery*; Hefferon's application and accuracy topics.
+Discovery*; van Kan, Segal, and Vermolen for modeling, numerical validation, and
+error analysis; Hefferon's application and accuracy topics; White Chapter 4 for
+Monte Carlo comparison of adaptive algorithms.
 
 **Phase IV integration gate.** Design, implement, and evaluate a simulation
 study with an explicit hypothesis, analytical baseline, uncertainty analysis,
@@ -754,7 +802,7 @@ minimum cuts; bipartite matching; Hall-style conditions; assignment problems;
 integrality.
 
 **Primary local sources.** Bondy and Murty Chapters 5 and 11; Parberry and
-Gasarch Chapters 9 and 13.
+Gasarch Chapters 9 and 13; Gupta Chapter 5 for transportation and assignment.
 
 ### Module 46 — Graphs IV: Coloring, Planarity, and Hard Structure
 
@@ -785,8 +833,10 @@ dynamics.
 hubs; communities; centrality; diffusion; contagion; cascades; robustness;
 network experiments.
 
-**Primary local sources.** Bondy and Murty provide graph foundations. No
-dedicated local network-science text is currently cataloged.
+**Primary local sources.** Bondy and Murty for graph foundations; Ghosh and
+Ghosh Chapters 10–12 for gossip, diffusion, and overlay networks. Random-graph,
+centrality, community, and robustness theory still lack a dedicated local
+network-science source.
 
 ### Module 48 — Markov Chains I: Finite-State Dynamics
 
@@ -801,7 +851,7 @@ multi-step evolution; communicating classes; recurrence and transience;
 simulation versus matrix calculation.
 
 **Primary local sources.** Grimmett and Stirzaker Chapter 6; Hefferon's Markov
-chain topic.
+chain topic; Cover and Thomas Chapter 4 for entropy rates of Markov chains.
 
 ### Module 49 — Markov Chains II: Long-Term Behavior and Hidden State
 
@@ -816,7 +866,9 @@ absorbing chains; hitting probabilities and times; higher-order chains; Hidden
 Markov Models; forward and filtering ideas.
 
 **Primary local sources.** Grimmett and Stirzaker Chapter 6; Hefferon's spectral
-and Markov topics.
+and Markov topics; Engelberg Chapter 10 for a discrete-time Kalman-filter
+bridge. Hidden Markov Models and systematic discrete-state filtering still
+lack a dedicated local source.
 
 ### Module 50 — Discrete Stochastic Processes and Random Walks
 
@@ -875,8 +927,11 @@ samples.
 and autoregressive ideas; spectral intuition; estimation from finite series;
 forecast validation.
 
-**Primary local sources.** Grimmett and Stirzaker Chapter 9. No dedicated local
-time-series text is cataloged.
+**Primary local sources.** Grimmett and Stirzaker Chapter 9; Pestman's
+stochastic-analysis material; Cover and Thomas Chapters 4 and 12 for entropy
+rates and stationary Gaussian processes; Mansuripur Chapter 9 for stationary
+sources. Autoregressive modeling, diagnostics, and forecast validation still
+lack a dedicated local time-series source.
 
 ### Module 54 — Martingales, Brownian Motion, and Diffusion
 
@@ -889,7 +944,8 @@ diffusions model noisy physical, financial, and biological evolution.
 submartingales; optional-stopping intuition; Brownian motion; diffusion;
 first-passage behavior; discretization and simulation error.
 
-**Primary local sources.** Grimmett and Stirzaker Chapters 12–13.
+**Primary local sources.** Grimmett and Stirzaker Chapters 12–13; Sell Chapters
+2–3 for diffusion-based MCMC applications.
 
 **Phase V integration gate.** Simulate and analytically inspect a networked
 stochastic system containing graph structure, state transitions, propagation,
@@ -909,8 +965,12 @@ machine learning depend on choosing good solutions in continuous spaces.
 functions; gradients; optimality conditions; gradient descent; line search;
 constrained optimization; duality intuition.
 
-**Primary local sources.** Hefferon and calculus modules supply prerequisites.
-No dedicated local optimization text is currently cataloged.
+**Primary local sources.** Gupta Chapters 9–10; Thomas and Finney's derivative
+and constrained-optimization sections; Loomis and Sternberg Chapter 3; Hefferon
+for linear-algebra prerequisites; Lattimore and Szepesvári Chapters 26 and 28
+for convex analysis, regularization, and online optimization; Zabczyk Part III
+for value functions, linear regulators, Riccati equations, and maximum-principle
+bridges to optimal control.
 
 ### Module 56 — Discrete and Combinatorial Optimization
 
@@ -924,8 +984,11 @@ world generation are usually constrained discrete searches.
 approximations; local search; simulated annealing; tabu concepts; genetic
 algorithms conceptually; approximation quality.
 
-**Primary local sources.** Parberry and Gasarch Chapters 8–10 and 12–13; Bondy
-and Murty for graph optimization examples.
+**Primary local sources.** Parberry and Gasarch Chapters 8–10 and 12–13; Gupta
+Chapters 2, 6–7, and 10; Bondy and Murty for graph optimization examples;
+Lattimore and Szepesvári Chapter 30 for combinatorial bandits; Liang, Liu, and
+Carroll Chapters 4 and 7 for simulated-annealing and stochastic-approximation
+applications to global optimization.
 
 ### Module 57 — Operations Research and Mathematical Programming
 
@@ -939,9 +1002,8 @@ staffing, and production systems require explicit trade-offs and feasibility.
 programming; transportation and assignment; scheduling; routing; inventory;
 queue-informed capacity; sensitivity analysis.
 
-**Primary local sources.** Bondy and Murty and Parberry and Gasarch provide flow
-and assignment foundations. No dedicated local operations-research text is
-currently cataloged.
+**Primary local sources.** Gupta Chapters 1–7 and 11–13; Bondy and Murty and
+Parberry and Gasarch for flow, assignment, and algorithmic foundations.
 
 ### Module 58 — Decision Theory and Utility
 
@@ -955,8 +1017,10 @@ autonomous agents need a defensible rule for choosing among uncertain outcomes.
 Bayesian decisions; value of information; multicriteria choices; sensitivity to
 belief and preference assumptions.
 
-**Primary local sources.** Probability and Bayesian modules provide foundations.
-No dedicated local decision-theory text is currently cataloged.
+**Primary local sources.** Chernoff and Moses Chapters 4–6 and Appendix F;
+Pestman's Bayesian-estimation material; Lattimore and Szepesvári Chapters
+34–36 for sequential Bayesian learning and action selection; the probability
+and Bayesian modules.
 
 ### Module 59 — Game Theory and Strategic Interaction
 
@@ -970,8 +1034,12 @@ factions, and multi-agent systems require incentive-aware behavior.
 dominance; minimax; Nash equilibrium; repeated games; imperfect information;
 Bayesian games; cooperation; coalitions; mechanism-design intuition.
 
-**Primary local sources.** Cummings contains an introductory game-theory bridge.
-No dedicated local game-theory text is currently cataloged.
+**Primary local sources.** Osborne and Rubinstein as the principal sequence for
+strategic games, Nash and mixed equilibrium, extensive and repeated games,
+imperfect information, Bayesian games, bargaining, implementation, and
+coalitional games; Gupta Chapter 8 for a gentler computational entry through
+two-person zero-sum games; Chernoff and Moses Appendix F and Cummings for
+introductory bridges.
 
 ### Module 60 — Markov Decision Processes and Partial Observability
 
@@ -985,8 +1053,13 @@ their future consequences rather than immediate reward alone.
 equations; policy and value iteration; stochastic control; POMDP concepts;
 belief states; planning under uncertainty.
 
-**Primary local sources.** Grimmett and Stirzaker and Hefferon provide Markov
-foundations. No dedicated local MDP text is currently cataloged.
+**Primary local sources.** Lattimore and Szepesvári Chapter 38 for MDPs,
+Bellman optimality, policy computation, and a reinforcement-learning bridge;
+Zabczyk Part III for value functions, Bellman equations, and optimal control;
+Sell Chapter 6 for Bayesian inverse reinforcement learning and control; Gupta
+Chapter 7 for dynamic programming; Grimmett and Stirzaker and Hefferon for
+Markov foundations. POMDPs and belief-state planning remain only partially
+covered.
 
 ### Module 61 — Multi-Armed Bandits
 
@@ -1000,8 +1073,13 @@ routing, and strategy selection must pay a real cost to acquire information.
 sampling; Bayesian updating; nonstationarity; contextual-bandit intuition;
 offline evaluation cautions.
 
-**Primary local sources.** Probability, Bayesian, and decision modules provide
-prerequisites. No dedicated local bandit text is currently cataloged.
+**Primary local sources.** White Chapters 1–7 provide the practical entry
+through epsilon-greedy, softmax, UCB, simulation, evaluation metrics,
+nonstationarity, and contextual extensions. Lattimore and Szepesvári provide
+the principal rigorous sequence: stochastic, adversarial, contextual, linear,
+combinatorial, nonstationary, and Bayesian bandits; regret analysis; lower
+bounds; pure exploration; and Thompson sampling. Probability, Bayesian,
+decision, linear-algebra, and optimization modules provide prerequisites.
 
 **Phase VI integration gate.** Build a multi-agent resource-allocation system
 that plans under uncertainty, compares exact and heuristic optimization, and
@@ -1021,9 +1099,12 @@ cycles, instability, or chaos that cannot be understood from one update step.
 attractors; feedback; bifurcations; sensitivity to initial conditions; chaos;
 numerical artifacts.
 
-**Primary local sources.** Hefferon's stable-population and oscillator topics
-provide linear examples. No dedicated local dynamical-systems text is
-cataloged.
+**Primary local sources.** Perko as the principal source; Zabczyk Part II for
+nonlinear controllability, Lyapunov stability, and stabilizability; Engelberg
+Chapter 8 for concrete nonlinear-control examples; Loomis and Sternberg and
+Hefferon's stable-population and oscillator topics for analytical and linear
+examples; Sokolov for far-later work on integrability, infinitesimal symmetries,
+conservation laws, and Hamiltonian structure.
 
 ### Module 63 — Control Theory
 
@@ -1033,12 +1114,18 @@ behavior despite disturbances.
 **Why it matters for programming.** Controllers regulate physical processes,
 server load, queues, inventory, pacing, and adaptive simulations.
 
-**Main contents.** Open and closed loops; setpoints; error; proportional,
-integral, and derivative control; stability; state-space models; controllability
-and observability intuition; stochastic control bridges.
+**Main contents.** Open and closed loops; transfer functions; setpoints and
+tracking error; frequency and time response; proportional, integral, and
+derivative control; stability and robustness; state-space models;
+controllability; observability and observers; discrete-time control; optimal
+and stochastic-control bridges.
 
-**Primary local sources.** Hehner's thermostat and reaction-controller examples
-provide small bridges. No dedicated local control text is cataloged.
+**Primary local sources.** Engelberg as the principal concrete sequence through
+classical feedback, stability, compensation, PID, state-space models,
+observers, and discrete-time control; Zabczyk for rigorous linear, nonlinear,
+and optimal control; Perko for dynamical systems and stability; Sell Chapter 6
+for an advanced Bayesian-control application; Hehner's thermostat and
+reaction-controller examples.
 
 ### Module 64 — Information Theory
 
@@ -1049,13 +1136,18 @@ communication limits.
 feature selection, anomaly detection, model comparison, communication, and
 novelty measurement.
 
-**Main contents.** Entropy; joint and conditional entropy; mutual information;
-KL divergence; cross-entropy; source coding; compression; channels; capacity;
-connections to Bayesian inference and learning.
+**Main contents.** Surprisal; entropy; joint and conditional entropy; mutual
+information; KL divergence; cross-entropy; data-processing inequality;
+asymptotic equipartition; source coding and compression; noisy channels;
+capacity and channel coding; rate distortion; connections to statistics,
+Bayesian inference, and learning.
 
-**Primary local sources.** Probability modules supply prerequisites; Hehner has
-an introductory information section. No dedicated local information-theory text
-is cataloged.
+**Primary local sources.** Stone for conceptual orientation; Mansuripur for the
+introductory progression through source coding, mutual information, channels,
+capacity, coding theorems, error correction, and rate distortion; Cover and
+Thomas as the principal rigorous and advanced source. Lattimore and Szepesvári
+Chapters 14–17 provide information-theoretic lower-bound applications; Hehner
+provides an introductory programming-oriented bridge.
 
 ### Module 65 — Causal Inference
 
@@ -1065,12 +1157,21 @@ through intervention.
 **Why it matters for programming.** Systems trained on observational data can
 recommend harmful actions when correlation is mistaken for causation.
 
-**Main contents.** Causal DAGs; confounding; interventions; potential outcomes;
-randomized experiments; adjustment; mediators and colliders; counterfactuals;
-causal identification and sensitivity.
+**Main contents.** Association versus causation; potential outcomes;
+structural causal models; causal DAGs and d-separation; confounding, mediators,
+colliders, and selection; interventions and do-notation; identifiability and
+back-door adjustment; randomized experiments; propensity scores, weighting,
+matching, and doubly robust estimation; instrumental variables; mediation;
+counterfactuals; sensitivity analysis; transportability.
 
-**Primary local sources.** Statistics, graphs, and experimental-design modules
-provide prerequisites. No dedicated local causal-inference text is cataloged.
+**Primary local sources.** Pearl's 2007 paper for the conceptual entry from
+association to causal language; Ding as the principal comprehensive sequence
+through potential outcomes, experiments, observational identification and
+estimation, sensitivity, instrumental variables, and mediation; Pearl's 2013
+paper for structural causal models, causal graphs, d-separation, interventions,
+do-calculus, graphical identification, mediation, transportability, and missing
+data. Statistics, probability, graphs, and experimental-design modules provide
+prerequisites.
 
 ### Module 66 — Concurrency, Communication, and Reactive Systems
 
@@ -1085,7 +1186,10 @@ sequential execution.
 message passing; buffers; producer-consumer systems; monitors; channels;
 deadlock; broadcast; deterministic schedule simulation; concurrency invariants.
 
-**Primary local sources.** Hehner Chapters 8–9.
+**Primary local sources.** Hehner Chapters 8–9; Ghosh and Ghosh Chapters 3–13
+for communication, ordering, global state, safety, liveness, mutual exclusion,
+consensus, gossip, and consistency; Pettorossi Chapter 2 for finite-state,
+Moore-machine, Mealy-machine, and transducer foundations.
 
 **Phase VII integration gate.** Build a controlled, concurrent, information-
 aware simulation and use causal experiments to distinguish observed behavior
@@ -1117,8 +1221,10 @@ When a module is about to begin:
 
 1. check completed modules and demonstrated mastery;
 2. confirm that its prerequisites still hold;
-3. consult [`books/CATALOG.md`](../books/CATALOG.md) and relevant chapters;
-4. identify missing source coverage;
+3. consult [`books/CATALOG.md`](../books/CATALOG.md),
+   [`books/MODULE_COVERAGE.md`](../books/MODULE_COVERAGE.md), and relevant
+   chapters;
+4. confirm or revise the recorded source coverage;
 5. research external primary sources only after the local review;
 6. create the module README and adaptive `PROBLEMS.md`;
 7. materialize exactly one challenge when requested.

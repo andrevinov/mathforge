@@ -498,12 +498,14 @@ Before starting a topic, internally determine:
 
 The books stored in `books/` are the primary external curriculum and challenge
 sources for Mathforge. Their catalog is maintained in
-[`books/CATALOG.md`](books/CATALOG.md).
+[`books/CATALOG.md`](books/CATALOG.md), and their module-level sufficiency is
+tracked in [`books/MODULE_COVERAGE.md`](books/MODULE_COVERAGE.md).
 
 When planning a module or challenge, the Agent must follow this research order:
 
 1. identify the exact curriculum position and the next conceptual increment;
-2. consult `books/CATALOG.md` to select relevant local sources;
+2. consult `books/CATALOG.md` and `books/MODULE_COVERAGE.md` to select relevant
+   local sources and identify known gaps;
 3. inspect the relevant books' chapter order, prerequisites, explanations,
    examples, exercises, and known edge cases;
 4. synthesize an applied programming challenge that preserves the useful

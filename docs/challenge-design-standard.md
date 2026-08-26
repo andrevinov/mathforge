@@ -402,7 +402,8 @@ The module plan must identify reuse before the challenge is materialized.
 
 The local collection in `books/` is the primary source for curriculum structure
 and challenge inspiration. Its routing index is
-[`books/CATALOG.md`](../books/CATALOG.md).
+[`books/CATALOG.md`](../books/CATALOG.md), and module-level source gaps are
+tracked in [`books/MODULE_COVERAGE.md`](../books/MODULE_COVERAGE.md).
 
 ### Research cycle
 
@@ -412,7 +413,8 @@ For module planning and challenge design:
    prerequisites, and single next conceptual increment before selecting a
    source.
 2. **Route through the catalog.** Use `books/CATALOG.md` to identify primary,
-   secondary, and solution-bearing sources relevant to the step.
+   secondary, and solution-bearing sources relevant to the step, and check
+   `books/MODULE_COVERAGE.md` for known limitations.
 3. **Inspect local books.** Review relevant tables of contents, prerequisite
    order, exposition, examples, exercises, hints, applications, and edge cases.
 4. **Compare sources when useful.** A second author may expose a missing
