@@ -4,4 +4,4 @@ def can_release(
     maintenance_mode: bool,
     emergency_override: bool,
 ) -> bool:
-    return approved and tests_passed and (maintenance_mode or emergency_override)
+    return tests_passed and not maintenance_mode and (approved or emergency_override)
