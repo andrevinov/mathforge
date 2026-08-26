@@ -2,14 +2,15 @@
 
 ## Purpose of this document
 
-This document defines Mathforge's initial learning sequence. Unlike the
-mathematical body of knowledge, the unit of learning here is the **module**: a
-deliberate combination of material from different fields, organized around a
-capability that can be demonstrated in programs.
+This document defines Mathforge's initial learning sequence. Unlike the body of
+knowledge, the unit of learning here is the **module**: a deliberate combination
+of mathematical and algorithmic material from different fields, organized
+around a capability that can be demonstrated in programs.
 
 This is not yet the complete list of project modules. The sequence ends when
-there is enough foundation to open later tracks in statistics, linear algebra,
-Markov chains, graphs, optimization, and stochastic processes.
+there is enough foundation to open later tracks in advanced algorithms and data
+structures, statistics, linear algebra, Markov chains, graphs, optimization,
+and stochastic processes.
 
 Each module will follow the cycle:
 
@@ -18,6 +19,31 @@ Each module will follow the cycle:
 The Agent will write the challenges and tests; André will write the
 implementations. By default, only the Python standard library will be used, and
 no library function will replace the mathematical mechanism being studied.
+
+## The longitudinal algorithmic spine
+
+Algorithms are not confined to one module. From the beginning, challenges will
+gradually require the student to reason about:
+
+- the representation chosen for a mathematical object;
+- the invariant that makes an algorithm correct;
+- why the algorithm terminates;
+- time and memory costs as input grows;
+- exhaustive solutions as baselines;
+- the point at which brute force becomes impractical;
+- trade-offs between exactness, approximation, time, and memory;
+- whether an earlier component should be reused or recomputed;
+- recurring problem structures rather than memorized code templates.
+
+Interview-style problems are appropriate when they isolate one of these
+capabilities. They will be treated as mathematical and engineering exercises,
+not as timed trick questions. The student should be able to explain why a
+solution works, derive its complexity, and recognize meaningful variants.
+
+Algorithmic concepts follow the same one-step progression as mathematical
+concepts. A challenge will not introduce a new mathematical concept, a new data
+structure, and a new optimization technique simultaneously unless all but one
+have already been mastered.
 
 ## Module 1 — States, rules, and possible worlds
 
@@ -42,7 +68,7 @@ permissions, state machines, filters, tests, and configuration systems.
 By the end, the student should be able to answer: which states exist, which are
 valid, and which rule accepts or rejects each one?
 
-### Mathematical content explored
+### Mathematical and algorithmic content explored
 
 - propositional logic;
 - predicates and quantifiers;
@@ -50,7 +76,10 @@ valid, and which rule accepts or rejects each one?
 - Cartesian products;
 - relations;
 - theory of functions;
-- cardinality and simple invariants.
+- cardinality and simple invariants;
+- exhaustive enumeration of tiny finite domains;
+- counterexamples as correctness evidence;
+- elementary time and memory reasoning.
 
 ## Module 2 — Counting without generating everything
 
@@ -62,7 +91,8 @@ configurations involving repetition, order, exclusions, and constraints.
 
 Direct enumeration will first be used as an oracle for small instances. Then
 formulas and recurrences must produce the same result without constructing every
-case.
+case. Where generation is required, the student will compare naive enumeration
+with recursive construction, backtracking, and elementary pruning.
 
 ### Why study this module
 
@@ -72,9 +102,10 @@ feasible. Counting techniques help generate tests, plan algorithms, avoid
 duplicates, and understand exponential costs.
 
 By the end, the student should distinguish “I can describe the possibilities”
-from “I can materialize all of them in memory.”
+from “I can materialize all of them in memory,” and should know when an
+algorithm's running time is dominated by the size of its output.
 
-### Mathematical content explored
+### Mathematical and algorithmic content explored
 
 - addition and multiplication principles;
 - permutations, arrangements, and combinations;
@@ -84,9 +115,57 @@ from “I can materialize all of them in memory.”
 - inclusion-exclusion principle;
 - mathematical induction;
 - recurrences;
-- generating functions at a conceptual level.
+- generating functions at a conceptual level;
+- exhaustive generation;
+- recursion and backtracking;
+- elementary pruning;
+- output-sensitive complexity;
+- time and memory costs of materializing a search space.
 
-## Module 3 — Exact probability in finite spaces
+## Module 3 — Algorithmic foundations: representation, search, and cost
+
+### Description
+
+An explicit first pass through data structures, algorithm correctness, and
+complexity. Problems begin with operations on sequences and small collections,
+then compare alternative representations and search strategies under clear
+constraints.
+
+The module will not be a disconnected collection of interview tricks. Each
+challenge will isolate one reusable idea, establish its invariant, test it
+exhaustively on small domains, and then vary the scale or representation.
+
+### Why study this module
+
+Mathematical models become useful software only when the program can process
+them correctly and within available resources. This module develops the ability
+to choose a data structure, justify an algorithm, and predict how performance
+changes as inputs grow.
+
+These capabilities are central to ordinary software work and technical
+interviews. By the end, the student should be able to solve foundational search
+and collection problems without relying on memorized templates, explain the
+invariant that makes a solution correct, and derive its basic time and memory
+costs.
+
+### Mathematical and algorithmic content explored
+
+- abstract data types and concrete representations;
+- arrays, strings, linked structures, stacks, queues, sets, and maps;
+- elementary hash-table behavior and collision concepts;
+- linear search and binary search;
+- elementary comparison-based sorting and selection;
+- preconditions, postconditions, and loop invariants;
+- termination arguments;
+- time and space complexity;
+- best, worst, and average cases;
+- asymptotic notation `O`, `Ω`, and `Θ`;
+- introductory amortized reasoning;
+- recursion and divide-and-conquer structure;
+- introductory two-pointer, sliding-window, and prefix-sum techniques;
+- explicit trade-offs between preprocessing, query time, and memory.
+
+## Module 4 — Exact probability in finite spaces
 
 ### Description
 
@@ -109,7 +188,7 @@ outcomes.
 By the end, the student should be able to construct a discrete distribution,
 calculate the probability of an event, and justify every assigned weight.
 
-### Mathematical content explored
+### Mathematical and algorithmic content explored
 
 - sample spaces;
 - events and operations on events;
@@ -118,9 +197,13 @@ calculate the probability of an event, and justify every assigned weight.
 - finite discrete distributions;
 - combinatorics;
 - indicator functions;
-- exact rational arithmetic.
+- exact rational arithmetic;
+- frequency maps;
+- exhaustive enumeration as an exact solver;
+- complexity of explicit sample spaces;
+- representation trade-offs for distributions.
 
-## Module 4 — Evidence, dependence, and Bayes
+## Module 5 — Evidence, dependence, and Bayes
 
 ### Description
 
@@ -141,7 +224,7 @@ independence, or ignore base rates.
 By the end, the student should clearly distinguish `P(A | B)` from `P(B | A)`
 and explain which assumptions support an update.
 
-### Mathematical content explored
+### Mathematical and algorithmic content explored
 
 - conditional probability;
 - independence of events;
@@ -150,9 +233,12 @@ and explain which assumptions support an update.
 - Bayes' theorem;
 - set partitions;
 - probability trees;
-- conditional counting.
+- conditional counting;
+- tree and table representations of evidence;
+- reuse of intermediate counts;
+- consistency checks across equivalent computations.
 
-## Module 5 — Random variables: measuring uncertain outcomes
+## Module 6 — Random variables: measuring uncertain outcomes
 
 ### Description
 
@@ -174,7 +260,7 @@ mean alone hides.
 By the end, the student should be able to turn a state model into a distribution
 of metrics and interpret its measures without using the `statistics` module.
 
-### Mathematical content explored
+### Mathematical and algorithmic content explored
 
 - functions and the image of a function;
 - discrete random variables;
@@ -185,9 +271,12 @@ of metrics and interpret its measures without using the `statistics` module.
 - variance and standard deviation;
 - covariance;
 - joint and marginal distributions;
-- transformations of discrete random variables.
+- transformations of discrete random variables;
+- grouping outcomes with maps;
+- dense versus sparse distribution representations;
+- one-pass and multi-pass computation trade-offs.
 
-## Module 6 — Sampling and reproducible simulation
+## Module 7 — Sampling and reproducible simulation
 
 ### Description
 
@@ -210,7 +299,7 @@ experimentation.
 By the end, the student should be able to implement and validate a weighted
 discrete sampler without using `random.choices`.
 
-### Mathematical content explored
+### Mathematical and algorithmic content explored
 
 - uniform and discrete distributions;
 - cumulative probabilities;
@@ -220,9 +309,13 @@ discrete sampler without using `random.choices`.
 - empirical frequencies;
 - an intuitive introduction to the law of large numbers;
 - absolute and relative error;
-- foundations of pseudorandom numbers.
+- foundations of pseudorandom numbers;
+- cumulative-table representation;
+- linear and binary search over cumulative weights;
+- preprocessing versus sampling-time trade-offs;
+- deterministic dependency injection for tests.
 
-## Module 7 — Statistics for computational experiments
+## Module 8 — Statistics for computational experiments
 
 ### Description
 
@@ -243,7 +336,7 @@ tests, product experiments, and performance analysis.
 By the end, the student should be able to plan repetitions, summarize results,
 quantify error, and explain the limits of the conclusions.
 
-### Mathematical content explored
+### Mathematical and algorithmic content explored
 
 - population and sample;
 - mean, median, quantiles, and histograms;
@@ -254,9 +347,13 @@ quantify error, and explain the limits of the conclusions.
 - an introductory view of the central limit theorem;
 - introductory confidence intervals;
 - exploratory data analysis;
-- correlation versus causation.
+- correlation versus causation;
+- streaming summaries;
+- stable one-pass and two-pass algorithms;
+- numeric stability and accumulated floating-point error;
+- complexity of repeated experiments.
 
-## Module 8 — Monte Carlo I: computing through experimentation
+## Module 9 — Monte Carlo I: computing through experimentation
 
 ### Description
 
@@ -279,7 +376,7 @@ By the end, the student should be able to choose an estimator, justify its
 correctness, measure its error, and recognize that more samples produce
 convergence rather than a guarantee of monotonic improvement.
 
-### Mathematical content explored
+### Mathematical and algorithmic content explored
 
 - Monte Carlo estimators;
 - expectation and variance of estimators;
@@ -290,7 +387,11 @@ convergence rather than a guarantee of monotonic improvement.
 - confidence intervals;
 - estimation of sums, probabilities, and geometric areas;
 - introductory variance reduction;
-- computational cost analysis.
+- computational cost analysis;
+- batching and streaming samples;
+- stopping rules at an introductory level;
+- exact-versus-approximate algorithm selection;
+- opportunities and limits of parallel independent trials.
 
 ## Boundary of this initial sequence
 
@@ -302,7 +403,10 @@ without losing the connections between them:
 - calculus, continuous probability, and optimization;
 - stochastic processes and queues;
 - statistical and Bayesian inference;
-- decision theory, game theory, and MDPs.
+- decision theory, game theory, and MDPs;
+- advanced data structures and string algorithms;
+- greedy algorithms, dynamic programming, and advanced backtracking;
+- graph algorithms and computational complexity.
 
 These tracks will be specified after the initial modules have produced evidence
 about the most appropriate pace, difficulties, and depth.

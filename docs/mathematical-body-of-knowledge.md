@@ -2,14 +2,16 @@
 
 ## Purpose of this document
 
-This document is the reference map of the mathematical fields we intend to
-study in Mathforge. It describes **what makes up the curriculum**, not the order
-in which the subjects will be studied.
+This document is the reference map of the mathematical fields and closely
+related algorithmic disciplines we intend to study in Mathforge. It describes
+**what makes up the curriculum**, not the order in which the subjects will be
+studied.
 
 The fields below naturally overlap. Markov chains, for example, use probability
 and linear algebra; optimization appears in operations research, control, and
-reinforcement learning. This overlap is desirable: mastering mathematics means
-recognizing the same structure in different problems.
+reinforcement learning; algorithm design turns all of these structures into
+effective programs. This overlap is desirable: mastery means recognizing the
+same structure in different problems and knowing how to compute with it.
 
 The inclusion criterion is not merely “this may be useful in one specific
 project.” We want fields that improve the general ability to:
@@ -17,6 +19,9 @@ project.” We want fields that improve the general ability to:
 - represent problems precisely;
 - recognize structures and invariants;
 - design algorithms;
+- choose representations and data structures deliberately;
+- reason about correctness and termination;
+- evaluate time and memory costs;
 - reason about uncertainty;
 - measure errors and interpret results;
 - make decisions subject to objectives and constraints;
@@ -514,13 +519,99 @@ causing instability.
 control; feedback; stability; proportional, integral, and derivative control;
 adaptive controllers at a later stage.
 
-## 5. How this map will be used
+## 5. Algorithms and computational problem-solving
+
+The subjects in this section are computer science disciplines rather than
+branches of mathematics in the narrowest sense. They belong in Mathforge
+because mathematical understanding is incomplete for our purposes until it can
+be transformed into a correct and efficient program.
+
+### Data structures
+
+**Description.** The study of ways to organize data so that required operations
+have clear semantics and predictable costs. A data structure is both a
+representation and a set of supported operations with invariants.
+
+**Why study it.** Choosing a representation often determines whether an
+algorithm is simple or difficult, fast or slow, correct or fragile. Data
+structures support everyday programming, technical interviews, simulation
+engines, compilers, databases, schedulers, graph systems, and nearly every
+nontrivial software system.
+
+**Planned topics.** Arrays and dynamic arrays; strings; linked structures;
+stacks; queues and deques; sets and maps; hash tables; heaps and priority
+queues; trees; binary search trees; tries; graph representations; disjoint-set
+union; dense and sparse representations; mutability and persistence at an
+introductory level.
+
+### Design and analysis of algorithms
+
+**Description.** The study of procedures for solving computational problems,
+together with methods for proving their correctness and measuring their use of
+time and memory.
+
+**Why study it.** A program can produce correct examples and still be wrong,
+fail to terminate, or become unusable as input grows. Algorithm analysis makes
+performance and correctness explicit. It also develops the transferable
+problem-solving skills expected in software-engineering interviews without
+reducing them to memorized tricks.
+
+**Planned topics.** Problem specifications; preconditions and postconditions;
+loop and structural invariants; termination; correctness arguments; time and
+space complexity; best, worst, and average cases; asymptotic notation
+`O`, `Ω`, and `Θ`; amortized analysis; empirical measurement versus theoretical
+analysis; searching; sorting; selection; string processing; elementary graph
+algorithms.
+
+### Algorithmic paradigms
+
+**Description.** The study of reusable strategies for constructing algorithms
+from the structure of a problem rather than from a memorized implementation.
+
+**Why study it.** Paradigms make unfamiliar problems recognizable. They help a
+programmer decide whether to enumerate, decompose, cache, choose locally, prune,
+randomize, approximate, or reorganize the state space. This is useful both in
+real systems and in interview-style problem solving.
+
+**Planned topics.** Exhaustive search; recursion; decrease and conquer; divide
+and conquer; backtracking; pruning; greedy algorithms; dynamic programming;
+memoization; branch and bound; randomized algorithms; online and streaming
+algorithms; approximation algorithms; heuristics. Recurring techniques such as
+two pointers, sliding windows, prefix sums, fast and slow pointers, interval
+merging, sweep lines, bitmasks, monotonic stacks, and monotonic queues will be
+treated as compositions of underlying ideas rather than recipes to memorize.
+
+### Computational complexity
+
+**Description.** The study of the resources required to solve classes of
+problems and of the boundaries between tractable, intractable, approximable,
+and undecidable computation.
+
+**Why study it.** Complexity explains when better implementation is enough and
+when the problem itself requires a different formulation, approximation,
+parameter restriction, or heuristic. It prevents wasted effort on exhaustive
+solutions that cannot scale and clarifies the value of reductions and lower
+bounds.
+
+**Planned topics.** Models of computation; input size; upper and lower bounds;
+polynomial and exponential growth; tractability; decision and optimization
+problems; reductions; the classes P and NP; NP-completeness; parameterized
+thinking at an introductory level; space complexity; computability and
+undecidability at a conceptual level.
+
+## 6. How this map will be used
 
 Mathforge challenges do not need to belong to a single field. A module on
 Markov chains can simultaneously exercise probability, matrices, graphs, and
-numerical analysis. The module document records these combinations and their
+numerical analysis while also requiring an appropriate representation and a
+complexity argument. The module document records these combinations and their
 concrete pedagogical order.
 
 Specialized libraries will not replace implementation of the mathematical
 mechanisms. If one is introduced in the future, it will be only after the manual
 implementation and generally for comparison, validation, or work at scale.
+
+Algorithmic practice will be longitudinal. Correctness, invariants,
+representation choices, and computational cost will recur throughout the
+mathematical modules rather than being confined to a single interview-preparation
+unit.
