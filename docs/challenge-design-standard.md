@@ -110,6 +110,7 @@ The plan begins with:
 
 - the module name and purpose;
 - prerequisites from earlier modules;
+- a `Curriculum Sources` section naming relevant local books and chapters;
 - the module's major mathematical milestones;
 - the capabilities that would demonstrate module mastery;
 - future fields that depend on the module.
@@ -136,6 +137,10 @@ before attempting this problem.
 
 **Reuse:** Whether the problem is standalone, modifies a previous solution, or
 imports a previously completed component.
+
+**Source basis:** The local books, chapters, external sources, or original
+synthesis that materially shaped the problem. Withhold an exact exercise number
+when it would disclose the solution path.
 ```
 
 The plan must not contain:
@@ -393,46 +398,104 @@ Avoid reuse when it would:
 
 The module plan must identify reuse before the challenge is materialized.
 
-## 10. Research and external inspiration
+## 10. Book-first research and source provenance
 
-The Agent may research external problems when a topic would benefit from better
-examples, realistic constraints, historical context, or known pathological
-cases.
+The local collection in `books/` is the primary source for curriculum structure
+and challenge inspiration. Its routing index is
+[`books/CATALOG.md`](../books/CATALOG.md).
 
-When using external inspiration:
+### Research cycle
 
-- adapt the problem to the module's exact learning objective;
-- preserve the one-step difficulty progression;
-- do not copy copyrighted problem statements wholesale;
-- cite a source when a dataset, definition, or distinctive problem construction
-  materially comes from it;
-- do not let the source reveal the solution in the student's active README;
-- prefer timeless mathematical sources over trend-driven examples unless
-  recency matters.
+For module planning and challenge design:
 
-Internet research is a tool for challenge quality, not a requirement for every
-problem.
+1. **Locate the learning step.** Determine the active milestone, mastered
+   prerequisites, and single next conceptual increment before selecting a
+   source.
+2. **Route through the catalog.** Use `books/CATALOG.md` to identify primary,
+   secondary, and solution-bearing sources relevant to the step.
+3. **Inspect local books.** Review relevant tables of contents, prerequisite
+   order, exposition, examples, exercises, hints, applications, and edge cases.
+4. **Compare sources when useful.** A second author may expose a missing
+   prerequisite, a gentler ordering, or a more revealing problem family.
+5. **Extract structure, not wording.** Identify the mathematical object,
+   constraint, misconception, or progression embodied by a useful exercise.
+6. **Adapt to programming.** Create an original problem with an explicit
+   software contract, realistic context when useful, exhaustive tests where
+   feasible, and exactly one main conceptual increment.
+7. **Design variants.** Produce one or two nearby extensions before searching
+   for an unrelated problem.
+8. **Use the internet as a second source tier.** Search externally only when the
+   books lack adequate coverage, realistic context, variants, pathological
+   cases, datasets, or current official information.
+9. **Record provenance.** Update the module source map and the planned problem's
+   `Source basis` field.
+
+The cycle begins with curriculum position rather than a book. A book's chapter
+order is evidence about prerequisites, not permission to override the student's
+demonstrated needs or Mathforge's one-step progression.
+
+### Source roles
+
+Use local sources in distinct roles:
+
+- **curriculum source:** guides topic selection, prerequisites, and ordering;
+- **problem source:** contributes the structure of an exercise or family of
+  exercises;
+- **reference source:** validates definitions, derivations, invariants, or edge
+  cases;
+- **solution source:** validates the Agent's reasoning or tests after independent
+  analysis.
+
+A source may fill several roles. Solution-bearing sources must be clearly marked
+in the catalog and module plan.
+
+### Adaptation and copyright
+
+Do not copy a problem statement verbatim or reproduce distinctive narrative,
+datasets, diagrams, or a long sequence of subquestions. Preserve the useful
+mathematical structure, then rewrite the task as an original English programming
+challenge with Mathforge's interface, constraints, variants, and tests.
+
+Follow these rules:
+
+- respect each source's copyright and license;
+- use only short quotations when a quotation is genuinely necessary;
+- cite a source when a definition, dataset, or distinctive construction is
+  materially retained;
+- do not reproduce a book's solution, derivation, or pseudocode;
+- do not let a citation in the active README reveal the solution path;
+- withhold exact exercise numbers until completion when necessary;
+- prefer chapter- or topic-level references in a provisional `PROBLEMS.md`;
+- add a more precise retrospective citation after completion when it is safe and
+  useful.
+
+If external internet research is needed, prefer primary and authoritative
+sources. Recency is irrelevant for timeless mathematics but mandatory when the
+problem depends on a current specification, dataset, law, API, or real-world
+fact.
 
 ## 11. Challenge lifecycle
 
 The normal lifecycle is:
 
 1. The student begins a module.
-2. The Agent creates or updates `PROBLEMS.md`.
-3. The student requests the first or next problem.
-4. The Agent selects and, if necessary, adjusts exactly one planned step.
-5. The Agent records likely variants for later use.
-6. The Agent creates the problem README, comprehensive tests, and empty
+2. The Agent identifies the curriculum position and consults the catalog and
+   relevant local books.
+3. The Agent creates or updates `PROBLEMS.md`, including its source map.
+4. The student requests the first or next problem.
+5. The Agent selects and, if necessary, adjusts exactly one planned step.
+6. The Agent records likely variants and source provenance for later use.
+7. The Agent creates the problem README, comprehensive tests, and empty
    `solution.py`.
-7. The student researches the mathematics and implements the solution.
-8. The Agent responds to requests using the graduated hint policy.
-9. Tests are run and failures are treated as evidence about understanding.
-10. After tests pass, the Agent reviews mathematical and software correctness.
-11. The student explains the model, correctness, assumptions, complexity, and
+8. The student researches the mathematics and implements the solution.
+9. The Agent responds to requests using the graduated hint policy.
+10. Tests are run and failures are treated as evidence about understanding.
+11. After tests pass, the Agent reviews mathematical and software correctness.
+12. The student explains the model, correctness, assumptions, complexity, and
     applications when the concept is important.
-12. The problem is marked `Completed`, the module plan is revised, and the work
+13. The problem is marked `Completed`, the module plan is revised, and the work
     is committed in a small historical step.
-13. Only then is the next challenge selected.
+14. Only then is the next challenge selected.
 
 At every stage, the objective is not merely to obtain passing code. It is to
 make the mathematical mechanism recognizable, implementable, testable, and

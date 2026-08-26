@@ -35,6 +35,30 @@ The student should already be able to:
 Any gap in these programming prerequisites should be handled as a small review,
 not silently converted into mathematical difficulty.
 
+## Curriculum Sources
+
+The module sequence was checked against the following local sources before the
+problem plan was finalized:
+
+- **Primary:** Oscar Levin, *Discrete Mathematics: An Open Introduction*,
+  Sections 0.2–0.4 and Chapter 3, for statements, predicates, quantifiers, sets,
+  functions, truth tables, equivalence, and proof-oriented counterexamples.
+- **Primary:** Jay Cummings, *Proofs: A Long-Form Mathematics Textbook*, Chapters
+  3, 5, 8, and 9, for sets, power sets, Cartesian products, logic, quantifier
+  negation, functions, equivalence relations, and partial orders.
+- **Programming bridge:** Eric Hehner, *A Practical Theory of Programming*,
+  Chapters 1–4 and Section 5.4, for binary expressions, functions, quantifiers,
+  specifications, program behavior, assertions, and invariants.
+- **Correctness reference:** Ian Parberry and William Gasarch, *Problems on
+  Algorithms*, Chapter 5, for the later transition from exhaustive examples to
+  correctness reasoning.
+
+Levin contains selected hints and solutions, and Parberry and Gasarch contains
+chapter-level hints and solutions. These parts are validation sources only and
+must not be used to disclose a challenge solution. See
+[`books/CATALOG.md`](../../books/CATALOG.md) for full routing and source-use
+policy.
+
 ## Mathematical milestones
 
 1. **Boolean rules:** propositions, truth assignments, and equivalence.
@@ -104,6 +128,9 @@ to an account-access decision.
 **Reuse:** Standalone. A later challenge may reuse its rule as a callable but
 will not depend on its internal implementation.
 
+**Source basis:** Levin Sections 0.2 and 3.1; Cummings Chapter 5; original
+feature-release programming adaptation.
+
 ### 02 — Truth Table Reporter
 
 **Status:** Planned
@@ -126,6 +153,9 @@ to three while preserving deterministic row order.
 
 **Reuse:** Standalone implementation, shaped so its completed enumeration engine
 may be reused by Problem 03.
+
+**Source basis:** Levin Section 3.1 and Cummings Section 5.2 for truth tables;
+original diagnostic-tool adaptation.
 
 ### 03 — Policy Equivalence Auditor
 
@@ -152,6 +182,9 @@ audit a simplified production policy against its original form.
 **Reuse:** Extends Problem 02 and may import its completed truth-assignment
 engine if doing so remains simple.
 
+**Source basis:** Levin Section 3.1 and Cummings Chapter 5 for logical
+equivalence and counterexamples; original policy-audit adaptation.
+
 ## Milestone 2 — Predicates and quantified requirements
 
 ### 04 — Deployment Record Validator
@@ -177,6 +210,9 @@ failed rules without changing eligibility semantics.
 **Reuse:** Standalone validator designed to become the predicate used by
 Problems 05 and 06.
 
+**Source basis:** Levin Section 0.2 and Hehner Chapters 1 and 3 for predicates
+over explicit domains; original deployment-record adaptation.
+
 ### 05 — Fleet-Wide Compliance Check
 
 **Status:** Planned
@@ -199,6 +235,9 @@ about one object becomes a claim about every object in a collection.
 report the number of records checked while preserving the same universal claim.
 
 **Reuse:** May import the completed validator from Problem 04.
+
+**Source basis:** Levin Section 0.2, Cummings Section 5.3, and Hehner Section 3.1
+for universal quantification; original fleet-compliance adaptation.
 
 ### 06 — Incident Witness Finder
 
@@ -224,6 +263,9 @@ counterexample to a compliance claim.
 **Reuse:** May reuse the validator or predicate contract from Problem 04, but
 the existential search is new.
 
+**Source basis:** Levin Section 0.2 and Cummings Sections 1.1 and 5.3 for
+existential claims and witnesses; original incident-search adaptation.
+
 ### 07 — Compliance Negation Auditor
 
 **Status:** Planned
@@ -248,6 +290,9 @@ permission or inventory records.
 
 **Reuse:** May import the completed universal and existential query engines from
 Problems 05 and 06.
+
+**Source basis:** Levin Sections 0.2 and 3.1 and Cummings Section 5.3 for
+quantifier negation and equivalence; original compliance-audit adaptation.
 
 ## Milestone 3 — Sets and state-space construction
 
@@ -276,6 +321,9 @@ and forbidden permissions.
 **Reuse:** Standalone set model. Its normalized permission representation may be
 reused by Problem 09.
 
+**Source basis:** Levin Section 0.3 and Cummings Chapter 3 for membership and
+subset relations; original access-scope adaptation.
+
 ### 09 — Permission Set Reconciler
 
 **Status:** Planned
@@ -303,6 +351,9 @@ preserving the meaning of each report field.
 **Reuse:** Extends Problem 08's data normalization when that reuse does not hide
 the set operations.
 
+**Source basis:** Levin Section 0.3, Cummings Section 3.4, and Hehner Section 2.1
+for set operations; original permission-reconciliation adaptation.
+
 ### 10 — Feature Bundle Enumerator
 
 **Status:** Planned
@@ -326,6 +377,9 @@ predicate without introducing counting formulas.
 
 **Reuse:** Standalone generator. Its output may later serve as one dimension of
 a finite state model.
+
+**Source basis:** Levin Section 0.3 and Cummings Chapter 3 for power sets and
+cardinality; original feature-bundle adaptation.
 
 ### 11 — Deployment Matrix Builder
 
@@ -351,6 +405,9 @@ states with a previously learned predicate.
 
 **Reuse:** Standalone state-space engine intended for reuse in Problems 12 and
 19 if its interface remains appropriate.
+
+**Source basis:** Levin Section 0.3 and Cummings Chapter 3 for Cartesian
+products; original deployment-matrix adaptation.
 
 ## Milestone 4 — Functions and mappings
 
@@ -379,6 +436,9 @@ instead of deployment states.
 **Reuse:** May consume states produced by Problem 11 without depending on how
 that product was implemented.
 
+**Source basis:** Levin Section 0.4, Cummings Chapter 8, and Hehner Chapter 3 for
+domain, codomain, and image; original classifier-contract adaptation.
+
 ### 13 — Transformation Pipeline Auditor
 
 **Status:** Planned
@@ -402,6 +462,9 @@ and adds exactly one structural operation between two functions.
 which two pipelines disagree.
 
 **Reuse:** Extends the finite function-audit representation from Problem 12.
+
+**Source basis:** Cummings Section 8.3 and Hehner Section 3.2.2 for function
+composition; original transformation-pipeline adaptation.
 
 ### 14 — Identifier Mapping Integrity Audit
 
@@ -428,6 +491,10 @@ the exact collisions or unused destination identifiers.
 **Reuse:** Extends Problem 12's finite mapping model and may reuse its validation
 component.
 
+**Source basis:** Levin Section 0.4 and Cummings Chapter 8 for injective,
+surjective, bijective, and invertible mappings; original identifier-migration
+adaptation.
+
 ## Milestone 5 — Relations
 
 ### 15 — Compatibility Relation Registry
@@ -453,6 +520,9 @@ pairs missing from a declared compatibility matrix.
 
 **Reuse:** Standalone relation representation that may reuse Cartesian-product
 validation from Problem 11.
+
+**Source basis:** Cummings Chapter 9 and Hehner Chapter 3 for relations as
+pairwise predicates; original plugin-compatibility adaptation.
 
 ### 16 — Relation Property Auditor
 
@@ -481,6 +551,9 @@ counterexample; compare a relation with its reversed relation.
 **Reuse:** Extends Problem 15's finite relation representation and is intended
 for reuse by Problems 17 and 18.
 
+**Source basis:** Cummings Chapter 9 for structural properties of finite
+relations; original property-auditor adaptation.
+
 ### 17 — Account Alias Classifier
 
 **Status:** Planned
@@ -508,6 +581,9 @@ smallest evidence that malformed alias data is not an equivalence relation.
 **Reuse:** May import the completed property checks from Problem 16 while adding
 class construction as the new work.
 
+**Source basis:** Cummings Section 9.1 for equivalence relations, classes, and
+partitions; original account-alias adaptation.
+
 ### 18 — Dependency Order Validator
 
 **Status:** Planned
@@ -533,6 +609,9 @@ order from a partial order as a later extension.
 
 **Reuse:** May import the property-audit engine from Problem 16. It must not add
 graph infrastructure.
+
+**Source basis:** Cummings Chapter 9 for partial orders and subset containment;
+original dependency-order adaptation.
 
 ## Milestone 6 — Integrated finite models
 
@@ -564,6 +643,10 @@ domain without naming the mathematical structures in advance.
 **Reuse:** Expected to reuse stable contracts or small engines from Problems 11,
 12, and 16 when doing so clarifies the integration. The exact reuse decision
 will be made only after those implementations have been reviewed.
+
+**Source basis:** Hehner Chapters 4 and 5 for specifications and assertions;
+Parberry and Gasarch Chapter 5 for correctness reasoning; original integrated
+finite-world synthesis from the preceding module problems.
 
 ## Planned progression summary
 

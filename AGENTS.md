@@ -501,6 +501,41 @@ Before starting a topic, internally determine:
 * what would demonstrate mastery;
 * what future topics depend on it.
 
+## Book-First Curriculum Research
+
+The books stored in `books/` are the primary external curriculum and challenge
+sources for Mathforge. Their catalog is maintained in
+[`books/CATALOG.md`](books/CATALOG.md).
+
+When planning a module or challenge, the Agent must follow this research order:
+
+1. identify the exact curriculum position and the next conceptual increment;
+2. consult `books/CATALOG.md` to select relevant local sources;
+3. inspect the relevant books' chapter order, prerequisites, explanations,
+   examples, exercises, and known edge cases;
+4. synthesize an applied programming challenge that preserves the useful
+   mathematical structure while following Mathforge's one-step progression;
+5. identify one or two variants;
+6. consult the internet only when the local books do not provide sufficient
+   coverage, a realistic programming context, useful variants, or relevant
+   pathological cases;
+7. record the sources that materially influenced the module or challenge.
+
+The books are advisory evidence, not authorities that override demonstrated
+student needs, prerequisite order, challenge scope, or Mathforge's
+implementation-first philosophy. When current facts, official specifications,
+or explicitly requested external research are intrinsic to a challenge, consult
+the appropriate current primary sources directly.
+
+Do not copy book problems verbatim. Adapt the mathematical structure into an
+original English programming challenge and respect the source's copyright and
+license. A source containing hints or solutions may be used to validate the
+Agent's reasoning and tests, but its solution must not be reproduced or leaked
+to the student. Exact exercise references may be withheld until challenge
+completion when an early citation would reveal the solution path.
+
+## Module Planning Records
+
 When the student starts a module, externalize the relevant part of that plan in
 the module's `PROBLEMS.md`. For each proposed challenge, record:
 
@@ -510,7 +545,8 @@ the module's `PROBLEMS.md`. For each proposed challenge, record:
 * previously studied concepts it reinforces;
 * what the student needs to know before attempting it;
 * one or two likely variants or extensions;
-* whether it may reuse or modify an earlier implementation.
+* whether it may reuse or modify an earlier implementation;
+* the books, chapters, or other sources that materially shaped it.
 
 This plan is provisional. Revise it as the student's solutions reveal that an
 intermediate step should be inserted, removed, or changed. The plan may describe
@@ -687,13 +723,15 @@ When beginning a new challenge:
 1. identify the current curriculum position;
 2. select exactly one learning objective;
 3. check the next planned challenge and adjust it based on prior evidence;
-4. identify one or two possible follow-up variants;
-5. create exactly one challenge directory when the student requests it;
-6. write the detailed problem README;
-7. create comprehensive tests;
-8. leave `solution.py` empty;
-9. explain why the challenge exists without teaching its solution;
-10. let the student implement it.
+4. consult the module's source map and relevant local books;
+5. identify one or two possible follow-up variants;
+6. record the challenge's source basis;
+7. create exactly one challenge directory when the student requests it;
+8. write the detailed problem README;
+9. create comprehensive tests;
+10. leave `solution.py` empty;
+11. explain why the challenge exists without teaching its solution;
+12. let the student implement it.
 
 Do not implement several curriculum steps at once.
 
