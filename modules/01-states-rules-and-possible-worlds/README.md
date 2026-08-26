@@ -49,19 +49,23 @@ domain.
 By the end of the module, the student should be able to:
 
 - translate a verbal rule into a precise Boolean condition;
+- distinguish implication from equivalence and identify necessary and
+  sufficient conditions;
 - distinguish a proposition from a predicate;
 - reason about universal and existential statements;
 - identify counterexamples to claims;
 - model collections and events as sets;
 - use set operations to express relationships among collections;
+- reason about complements and De Morgan's laws over a declared universe;
 - construct finite state spaces from Cartesian products;
 - distinguish the domain, codomain, and image of a function;
 - reason about composition and information loss in mappings;
 - represent a binary relation explicitly;
-- recognize common structural properties of relations;
+- audit reflexivity, irreflexivity, symmetry, antisymmetry, and transitivity
+  independently;
 - connect equivalence relations with partitions;
 - recognize a partial order;
-- state and test invariants of a finite system;
+- state an invariant and determine whether declared transitions preserve it;
 - explain the computational cost of exhaustive enumeration in simple cases.
 
 ## Mathematical content to review
@@ -119,6 +123,8 @@ Review:
 - union, intersection, difference, and complement;
 - disjoint sets;
 - symmetric difference;
+- complements relative to an explicit universal set;
+- De Morgan's laws for sets;
 - power sets;
 - Cartesian products;
 - finite cardinality;
@@ -171,6 +177,7 @@ Review:
 - valid and invalid states;
 - invariants as properties that must always hold;
 - transitions that preserve or violate an invariant;
+- transition relations over finite state spaces;
 - exhaustive enumeration of a small finite domain;
 - counterexamples as evidence that a universal claim is false;
 - basic time and memory costs of materializing finite state spaces.
@@ -220,7 +227,8 @@ the examples but fails for the underlying problem.
 
 ### Milestone 1 — Boolean rules
 
-Translate, evaluate, enumerate, and compare finite Boolean rules.
+Translate, evaluate, enumerate, compare, and audit implications among finite
+Boolean rules, including necessary and sufficient conditions.
 
 ### Milestone 2 — Predicates and quantified requirements
 
@@ -229,8 +237,8 @@ existential ones.
 
 ### Milestone 3 — Sets and state-space construction
 
-Represent collections mathematically and construct finite spaces of possible
-configurations.
+Represent collections mathematically, reason about their boundaries and
+complements, and construct finite spaces of possible configurations.
 
 ### Milestone 4 — Functions and mappings
 
@@ -239,11 +247,13 @@ information.
 
 ### Milestone 5 — Relations
 
-Represent pairwise structure and recognize equivalence and ordering properties.
+Represent pairwise structure; audit each major relation property in a small
+step; and then recognize equivalence and ordering structures.
 
 ### Milestone 6 — Integrated finite models
 
-Combine states, rules, mappings, relations, and invariants in one small system.
+First determine whether transitions preserve an invariant, then combine states,
+rules, mappings, relations, and invariants in one small system.
 
 ## Evidence of mastery
 
@@ -254,7 +264,10 @@ evidence that the student can:
 - predict important results before running the code;
 - explain why the implementation matches the mathematical definition;
 - identify assumptions and counterexamples;
+- distinguish a failed implication from a failed equivalence;
 - design or recognize useful invariants;
+- explain why a transition preserves an invariant or provide a violating
+  transition;
 - estimate when exhaustive enumeration is reasonable;
 - recognize these structures in a problem that does not name them explicitly.
 

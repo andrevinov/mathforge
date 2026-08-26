@@ -4,7 +4,7 @@
 
 **Module status:** Ready to begin
 
-**Initial challenge count:** 19
+**Initial challenge count:** 25
 
 This is an adaptive curriculum plan, not a fixed contract. Challenge count,
 order, scope, and reuse decisions may change after each student implementation.
@@ -18,7 +18,7 @@ until the student explicitly requests the first or next problem.
 ## Module purpose
 
 Develop the ability to represent finite states, rules, mappings, relationships,
-and invariants precisely enough to implement and test them.
+transitions, and invariants precisely enough to implement and test them.
 
 ## Prerequisites
 
@@ -37,18 +37,19 @@ not silently converted into mathematical difficulty.
 
 ## Curriculum Sources
 
-The module sequence was checked against the following local sources before the
-problem plan was finalized:
+The module sequence was checked against the following local sources:
 
 - **Primary:** Oscar Levin, *Discrete Mathematics: An Open Introduction*,
-  Sections 0.2–0.4 and Chapter 3, for statements, predicates, quantifiers, sets,
-  functions, truth tables, equivalence, and proof-oriented counterexamples.
+  Sections 0.2–0.4 and Chapter 3, for implications, necessary and sufficient
+  conditions, predicates, quantifiers, sets, functions, truth tables, logical
+  equivalence, and counterexamples.
 - **Primary:** Jay Cummings, *Proofs: A Long-Form Mathematics Textbook*, Chapters
-  3, 5, 8, and 9, for sets, power sets, Cartesian products, logic, quantifier
-  negation, functions, equivalence relations, and partial orders.
+  3, 5, 8, and 9, for sets, complements, De Morgan's laws, power sets,
+  Cartesian products, logic, functions, relation properties, equivalence
+  relations, and partial orders.
 - **Programming bridge:** Eric Hehner, *A Practical Theory of Programming*,
-  Chapters 1–4 and Section 5.4, for binary expressions, functions, quantifiers,
-  specifications, program behavior, assertions, and invariants.
+  Chapters 1–4 and Section 5.4, for binary expressions, predicates, functions,
+  quantifiers, specifications, program behavior, assertions, and invariants.
 - **Correctness reference:** Ian Parberry and William Gasarch, *Problems on
   Algorithms*, Chapter 5, for the later transition from exhaustive examples to
   correctness reasoning.
@@ -61,17 +62,18 @@ policy.
 
 ## Mathematical milestones
 
-1. **Boolean rules:** propositions, truth assignments, and equivalence.
-2. **Predicates and quantifiers:** rules over domains, universal claims,
-   existential claims, and negation.
-3. **Sets and state spaces:** membership, set operations, power sets, and
-   Cartesian products.
-4. **Functions and mappings:** domain, codomain, image, composition, and mapping
-   properties.
-5. **Relations:** binary relations, structural properties, equivalence, and
-   partial order.
-6. **Integrated finite models:** states, rules, mappings, relations, cardinality,
-   and invariants working together.
+1. **Boolean rules:** propositions, truth assignments, implication, necessary
+   and sufficient conditions, and equivalence.
+2. **Predicates and quantifiers:** rules over domains, universal and existential
+   claims, witnesses, counterexamples, and quantified negation.
+3. **Sets and state spaces:** membership, set operations, complements, De
+   Morgan's laws, power sets, and Cartesian products.
+4. **Functions and mappings:** domain, codomain, image, composition,
+   injectivity, surjectivity, and bijectivity.
+5. **Relations:** pair representation; reflexive, symmetric, antisymmetric, and
+   transitive behavior; equivalence; and partial order.
+6. **Invariants and integration:** transition preservation followed by a finite
+   system that combines the module's mathematical structures.
 
 ## Evidence required for module mastery
 
@@ -79,23 +81,23 @@ The student must eventually demonstrate the ability to:
 
 - translate plain-language rules into correct predicates;
 - test finite Boolean claims exhaustively;
-- produce or interpret a counterexample;
+- distinguish implication from equivalence and necessary from sufficient;
+- produce or interpret witnesses and counterexamples;
 - distinguish universal and existential requirements;
 - model finite collections and state spaces as sets;
+- reason about a set relative to a declared universe;
 - describe and classify finite functions;
-- represent and inspect finite relations;
-- state and test invariants;
+- represent finite relations and audit their properties independently;
+- state an invariant and test whether transitions preserve it;
 - integrate these structures without being told which one to use;
 - explain correctness, assumptions, and basic enumeration cost.
 
 ## Future fields that depend on this module
 
-- discrete mathematics;
-- combinatorics;
-- probability and sample spaces;
-- graph theory;
-- state machines and dynamical systems;
-- formal specification and verification;
+- discrete mathematics and proof;
+- combinatorics and probability spaces;
+- algorithms, specifications, and verification;
+- graph theory and state machines;
 - optimization over finite domains;
 - Markov chains and Markov decision processes.
 
@@ -106,340 +108,373 @@ The student must eventually demonstrate the ability to:
 **Status:** Planned
 
 **Problem idea:** Implement the decision rule used by a deployment service to
-decide whether a feature may be released from a small collection of Boolean
-facts such as approval, test status, maintenance mode, and emergency override.
+decide whether a feature may be released from a few Boolean facts such as
+approval, test status, maintenance mode, and emergency override.
 
-**New concept:** Compound propositions built from negation, conjunction, and
-disjunction. These connectives form one small inseparable group because the
-first useful rule needs both combination and exclusion.
+**New concept:** Compound propositions using negation, conjunction, and
+disjunction. This small group is inseparable in the first useful policy.
 
 **Reinforces:** Python Boolean values, comparisons, conditionals, and total
 functions over a tiny finite domain.
 
-**Prerequisites:** Ability to read a verbal rule carefully and evaluate simple
-Boolean expressions.
+**Prerequisites:** Ability to read a verbal rule and evaluate a simple Boolean
+expression.
 
-**Why this step is next:** It exposes the smallest useful mathematical object in
-the module—a proposition—inside an ordinary programming rule.
+**Why this step is next:** It exposes the smallest useful mathematical object
+in the module—a proposition—inside an ordinary programming rule.
 
-**Likely variants:** Add one emergency exception; transfer the same rule shape
-to an account-access decision.
+**Likely variants:** Add one emergency exception; transfer the rule shape to an
+account-access decision.
 
-**Reuse:** Standalone. A later challenge may reuse its rule as a callable but
-will not depend on its internal implementation.
+**Reuse:** Standalone. Later problems may call the completed rule without
+depending on its implementation.
 
 **Source basis:** Levin Sections 0.2 and 3.1; Cummings Chapter 5; original
-feature-release programming adaptation.
+feature-release adaptation.
 
 ### 02 — Truth Table Reporter
 
 **Status:** Planned
 
-**Problem idea:** Build a diagnostic tool that reports the result of a Boolean
-policy for every possible assignment of a small declared set of flags.
+**Problem idea:** Report the result of a Boolean policy for every possible
+assignment of a small declared set of flags.
 
 **New concept:** Truth tables as exhaustive models of finite Boolean behavior.
 
-**Reinforces:** Compound propositions and finite iteration from Problem 01.
+**Reinforces:** Compound propositions and deterministic finite enumeration.
 
-**Prerequisites:** Understanding Boolean variables and being able to evaluate a
-rule for one assignment.
+**Prerequisites:** Problem 01 and the ability to evaluate a rule for one
+assignment.
 
-**Why this step is next:** Problem 01 evaluates one case; this problem changes
-only the scale of observation by covering the entire small domain.
+**Why this step is next:** It changes only the scale of observation: one case
+becomes the entire small Boolean domain.
 
-**Likely variants:** Include named intermediate columns; increase from two flags
-to three while preserving deterministic row order.
+**Likely variants:** Include named intermediate columns; increase the number of
+flags while preserving deterministic row order.
 
-**Reuse:** Standalone implementation, shaped so its completed enumeration engine
-may be reused by Problem 03.
+**Reuse:** Its truth-assignment engine may be reused by Problems 03 and 04.
 
-**Source basis:** Levin Section 3.1 and Cummings Section 5.2 for truth tables;
+**Source basis:** Levin Chapter 3 and Cummings Chapter 5 for truth tables;
 original diagnostic-tool adaptation.
 
-### 03 — Policy Equivalence Auditor
+### 03 — Policy Implication Auditor
+
+**Status:** Planned
+
+**Problem idea:** Determine whether satisfying one finite Boolean policy always
+guarantees another and report a state that disproves the guarantee when it
+fails.
+
+**New concept:** Logical implication, including necessary and sufficient
+conditions.
+
+**Reinforces:** Truth tables, exhaustive testing, and counterexamples.
+
+**Prerequisites:** Problem 02 and familiarity with evaluating two rules on the
+same assignment.
+
+**Why this step is next:** The student already knows every row of a policy; this
+adds one directional claim between two policies.
+
+**Likely variants:** Audit the reverse implication; classify a condition as
+necessary, sufficient, both, or neither.
+
+**Reuse:** May import the truth-assignment engine from Problem 02.
+
+**Source basis:** Levin Section 0.2 and Cummings Chapter 5 for implications and
+counterexamples; original policy-contract adaptation.
+
+### 04 — Policy Equivalence Auditor
 
 **Status:** Planned
 
 **Problem idea:** Compare two Boolean policies over a declared finite domain and
-report whether they always agree, including a disagreement case when they do
+report whether they always agree, including a disagreement state when they do
 not.
 
-**New concept:** Logical equivalence.
+**New concept:** Logical equivalence and biconditional meaning.
 
-**Reinforces:** Truth tables, exhaustive finite testing, propositions, and
-counterexamples.
+**Reinforces:** Both directions of implication, truth tables, exhaustive finite
+testing, and counterexamples.
 
-**Prerequisites:** Ability to enumerate all truth assignments and evaluate a
-rule on each one.
+**Prerequisites:** Problem 03 and the distinction between a one-way guarantee
+and equal behavior.
 
-**Why this step is next:** It gives the truth-table machinery from Problem 02 a
-single new purpose: comparing meanings rather than merely listing outputs.
+**Why this step is next:** It composes the directional reasoning from Problem
+03 into a stronger comparison without changing the domain.
 
-**Likely variants:** Detect whether a policy is always true or always false;
-audit a simplified production policy against its original form.
+**Likely variants:** Detect tautologies and contradictions; audit a simplified
+production rule against its original form.
 
-**Reuse:** Extends Problem 02 and may import its completed truth-assignment
-engine if doing so remains simple.
+**Reuse:** May extend the engines from Problems 02 and 03.
 
-**Source basis:** Levin Section 3.1 and Cummings Chapter 5 for logical
-equivalence and counterexamples; original policy-audit adaptation.
+**Source basis:** Levin Chapter 3 and Cummings Chapter 5 for equivalence;
+original policy-audit adaptation.
 
 ## Milestone 2 — Predicates and quantified requirements
 
-### 04 — Deployment Record Validator
+### 05 — Deployment Record Validator
 
 **Status:** Planned
 
-**Problem idea:** Implement a validator that decides whether one structured
-deployment record satisfies a documented collection of eligibility rules.
+**Problem idea:** Decide whether one structured deployment record satisfies a
+documented collection of eligibility rules.
 
 **New concept:** Predicates interpreted over an explicit domain.
 
 **Reinforces:** Boolean rules and careful translation from prose.
 
-**Prerequisites:** Propositions, functions, tuples or dictionaries, and the
-difference between valid input data and a true predicate result.
+**Prerequisites:** Milestone 1, functions, and tuples or dictionaries.
 
-**Why this step is next:** Earlier rules used only Boolean flags; this problem
-adds variables whose values come from a meaningful domain.
+**Why this step is next:** Earlier propositions used Boolean flags; this adds
+variables whose values come from a meaningful domain.
 
 **Likely variants:** Validate a user-registration record; return the names of
 failed rules without changing eligibility semantics.
 
-**Reuse:** Standalone validator designed to become the predicate used by
-Problems 05 and 06.
+**Reuse:** Designed to become the predicate used by Problems 06 and 07.
 
-**Source basis:** Levin Section 0.2 and Hehner Chapters 1 and 3 for predicates
-over explicit domains; original deployment-record adaptation.
+**Source basis:** Levin Section 0.2 and Hehner Chapters 1 and 3 for predicates;
+original deployment-record adaptation.
 
-### 05 — Fleet-Wide Compliance Check
+### 06 — Fleet-Wide Compliance Check
 
 **Status:** Planned
 
 **Problem idea:** Decide whether every deployment record in a fleet satisfies a
-provided compliance predicate, including the behavior of an empty fleet.
+provided compliance predicate, including the empty-fleet case.
 
 **New concept:** Universal quantification.
 
-**Reinforces:** Predicates, explicit domains, empty-input behavior, and Boolean
-results.
+**Reinforces:** Predicates, explicit domains, and boundary behavior.
 
-**Prerequisites:** Ability to apply one predicate to one record and understand
-what population the claim refers to.
+**Prerequisites:** Problem 05 and clarity about the population being checked.
 
-**Why this step is next:** It changes only one dimension of Problem 04: a rule
-about one object becomes a claim about every object in a collection.
+**Why this step is next:** A rule about one object becomes a claim about every
+object, with no other conceptual change.
 
-**Likely variants:** Require compliance only within a selected environment;
-report the number of records checked while preserving the same universal claim.
+**Likely variants:** Restrict the domain to one environment; return a violating
+record when compliance fails.
 
-**Reuse:** May import the completed validator from Problem 04.
+**Reuse:** May import the validator from Problem 05.
 
-**Source basis:** Levin Section 0.2, Cummings Section 5.3, and Hehner Section 3.1
-for universal quantification; original fleet-compliance adaptation.
+**Source basis:** Levin Section 0.2, Cummings Chapter 5, and Hehner Chapter 3;
+original fleet-compliance adaptation.
 
-### 06 — Incident Witness Finder
+### 07 — Incident Witness Finder
 
 **Status:** Planned
 
-**Problem idea:** Search a collection of system records for evidence that an
-alert condition occurs, returning a concrete witness when one exists.
+**Problem idea:** Search system records for evidence that an alert condition
+occurs, returning a concrete witness when one exists.
 
 **New concept:** Existential quantification and witnesses.
 
-**Reinforces:** Predicates, collection domains, and the distinction between a
-Boolean claim and supporting evidence.
+**Reinforces:** Predicates, collection domains, and evidence for a Boolean
+claim.
 
-**Prerequisites:** Universal quantification and applying a predicate across a
-collection.
+**Prerequisites:** Problem 06 and applying a predicate across a collection.
 
 **Why this step is next:** It introduces the other fundamental quantified claim
-while retaining the same record-and-predicate model used in Problem 05.
+while retaining the same record-and-predicate model.
 
-**Likely variants:** Return all witnesses instead of the first; search for a
-counterexample to a compliance claim.
+**Likely variants:** Return every witness; search specifically for a
+counterexample to universal compliance.
 
-**Reuse:** May reuse the validator or predicate contract from Problem 04, but
-the existential search is new.
+**Reuse:** May reuse the predicate contract from Problem 05.
 
-**Source basis:** Levin Section 0.2 and Cummings Sections 1.1 and 5.3 for
-existential claims and witnesses; original incident-search adaptation.
+**Source basis:** Levin Section 0.2 and Cummings Chapter 5 for existential
+claims and witnesses; original incident-search adaptation.
 
-### 07 — Compliance Negation Auditor
+### 08 — Compliance Negation Auditor
 
 **Status:** Planned
 
-**Problem idea:** Audit paired compliance queries that express a requirement and
-its negation, checking their agreement across finite collections and reporting a
-collection that exposes an incorrect negation.
+**Problem idea:** Check whether paired compliance queries correctly express a
+quantified requirement and its negation, reporting a finite collection that
+exposes an incorrect rewrite.
 
 **New concept:** Negation of quantified statements.
 
-**Reinforces:** Universal and existential quantification, logical equivalence,
-and counterexamples.
+**Reinforces:** Universal and existential quantification, equivalence, and
+counterexamples.
 
-**Prerequisites:** Problems 03, 05, and 06; familiarity with negating a simple
-Boolean statement.
+**Prerequisites:** Problems 04, 06, and 07.
 
 **Why this step is next:** It composes the two quantifiers already implemented
-and adds only the rules governing their negation.
+and changes only how a quantified claim is negated.
 
-**Likely variants:** Audit “none” versus “not some”; transfer the same logic to
-permission or inventory records.
+**Likely variants:** Audit “none” versus “not some”; transfer the logic to
+permissions or inventory records.
 
-**Reuse:** May import the completed universal and existential query engines from
-Problems 05 and 06.
+**Reuse:** May import the universal and existential query engines.
 
-**Source basis:** Levin Sections 0.2 and 3.1 and Cummings Section 5.3 for
-quantifier negation and equivalence; original compliance-audit adaptation.
+**Source basis:** Levin Sections 0.2 and 3.1 and Cummings Chapter 5 for
+quantifier negation; original compliance-audit adaptation.
 
 ## Milestone 3 — Sets and state-space construction
 
-### 08 — Access Scope Containment
+### 09 — Access Scope Containment
 
 **Status:** Planned
 
 **Problem idea:** Determine whether all permissions requested by a service are
-contained in the permissions granted to it, and report any requests outside the
-granted scope.
+contained in its granted permissions and report requests outside the scope.
 
-**New concept:** Set membership and the subset relationship.
+**New concept:** Set membership and subset containment.
 
-**Reinforces:** Universal claims, predicates, witnesses, and the effect of
-duplicates in input data.
+**Reinforces:** Universal claims, witnesses, and duplicate-insensitive data.
 
-**Prerequisites:** Quantified collection rules and basic familiarity with Python
-sets.
+**Prerequisites:** Milestone 2 and introductory familiarity with Python sets.
 
 **Why this step is next:** It reinterprets a familiar compliance question using
-a mathematical collection whose equality and containment ignore order.
+a collection whose equality and containment ignore order.
 
-**Likely variants:** Check strict containment; distinguish required, optional,
+**Likely variants:** Check proper containment; distinguish required, optional,
 and forbidden permissions.
 
-**Reuse:** Standalone set model. Its normalized permission representation may be
-reused by Problem 09.
+**Reuse:** Its normalized permission representation may be reused by Problem
+10.
 
 **Source basis:** Levin Section 0.3 and Cummings Chapter 3 for membership and
-subset relations; original access-scope adaptation.
+subsets; original access-scope adaptation.
 
-### 09 — Permission Set Reconciler
-
-**Status:** Planned
-
-**Problem idea:** Compare two permission snapshots and report shared,
-newly-added, removed, and combined permissions without treating order or
-duplicates as meaningful.
-
-**New concept:** The basic family of set operations—union, intersection, and
-difference. They are grouped because one reconciliation report defines them
-side by side over the same two sets.
-
-**Reinforces:** Membership, subsets, finite cardinality, and precise output
-contracts.
-
-**Prerequisites:** Problem 08 and the mathematical distinction between a set and
-a sequence.
-
-**Why this step is next:** It retains the same permission domain and adds ways
-to construct related sets instead of asking only about containment.
-
-**Likely variants:** Add symmetric difference; reconcile three snapshots while
-preserving the meaning of each report field.
-
-**Reuse:** Extends Problem 08's data normalization when that reuse does not hide
-the set operations.
-
-**Source basis:** Levin Section 0.3, Cummings Section 3.4, and Hehner Section 2.1
-for set operations; original permission-reconciliation adaptation.
-
-### 10 — Feature Bundle Enumerator
+### 10 — Permission Set Reconciler
 
 **Status:** Planned
 
-**Problem idea:** Produce every distinct feature bundle that can be selected
-from a small catalog, including the empty bundle and the full catalog.
+**Problem idea:** Compare two permission snapshots and report shared, added,
+removed, and combined permissions without treating order or duplicates as
+meaningful.
+
+**New concept:** Union, intersection, and difference as one operational family
+over the same two sets.
+
+**Reinforces:** Membership, subsets, cardinality, and precise output contracts.
+
+**Prerequisites:** Problem 09 and the distinction between sets and sequences.
+
+**Why this step is next:** It retains the same domain and adds ways to construct
+related sets instead of asking only about containment.
+
+**Likely variants:** Add symmetric difference; reconcile three snapshots.
+
+**Reuse:** May extend Problem 09's data normalization.
+
+**Source basis:** Levin Section 0.3, Cummings Chapter 3, and Hehner Chapter 2;
+original permission-reconciliation adaptation.
+
+### 11 — Policy Boundary Auditor
+
+**Status:** Planned
+
+**Problem idea:** Given an explicit universe of capabilities, compare original
+and rewritten allow/deny policies and report any capability classified
+differently.
+
+**New concept:** Set complement relative to a declared universe and De Morgan's
+laws for sets. These are paired because complement has no unambiguous meaning
+without the universe used by the policy rewrite.
+
+**Reinforces:** Union, intersection, difference, equivalence, and
+counterexamples.
+
+**Prerequisites:** Problems 04 and 10.
+
+**Why this step is next:** Previous operations combined known sets; this adds
+their boundary relative to an explicit surrounding domain.
+
+**Likely variants:** Audit a second De Morgan rewrite; reject sets containing
+values outside the declared universe.
+
+**Reuse:** May reuse the equivalence-reporting pattern from Problem 04 and set
+normalization from Problem 10.
+
+**Source basis:** Levin Section 0.3 and Cummings Chapters 3 and 5 for
+complements and De Morgan's laws; original policy-boundary adaptation.
+
+### 12 — Feature Bundle Enumerator
+
+**Status:** Planned
+
+**Problem idea:** Produce every distinct feature bundle selectable from a small
+catalog, including the empty and full bundles.
 
 **New concept:** Power sets.
 
 **Reinforces:** Subsets, set equality, cardinality, exhaustive generation, and
 deterministic representation.
 
-**Prerequisites:** Problems 08 and 09; ability to distinguish a collection of
-subsets from one subset.
+**Prerequisites:** Problems 09–11 and the distinction between a set and a set of
+sets.
 
 **Why this step is next:** Earlier problems inspected or combined given sets;
-this one constructs the complete set of their possible subsets.
+this constructs the complete collection of their subsets.
 
-**Likely variants:** Restrict bundle size; attach a Boolean compatibility
+**Likely variants:** Restrict bundle size; filter bundles with a compatibility
 predicate without introducing counting formulas.
 
-**Reuse:** Standalone generator. Its output may later serve as one dimension of
-a finite state model.
+**Reuse:** Its output may later serve as one dimension of a finite state model.
 
-**Source basis:** Levin Section 0.3 and Cummings Chapter 3 for power sets and
-cardinality; original feature-bundle adaptation.
+**Source basis:** Levin Section 0.3 and Cummings Chapter 3 for power sets;
+original feature-bundle adaptation.
 
-### 11 — Deployment Matrix Builder
+### 13 — Deployment Matrix Builder
 
 **Status:** Planned
 
-**Problem idea:** Build every possible deployment state from independent finite
-collections such as environments, runtime versions, and regions, preserving the
-meaning and order of each state attribute.
+**Problem idea:** Build every deployment state from independent finite domains
+such as environments, runtime versions, and regions, preserving attribute
+meaning and order.
 
 **New concept:** Cartesian products.
 
-**Reinforces:** Sets, ordered tuples, finite cardinality, exhaustive generation,
-and empty-domain behavior.
+**Reinforces:** Sets, ordered tuples, cardinality, exhaustive generation, and
+empty-domain behavior.
 
-**Prerequisites:** Set membership and confidence representing one state as an
-ordered tuple.
+**Prerequisites:** Set membership and representing one state as an ordered
+tuple.
 
-**Why this step is next:** Problem 10 generated selections from one catalog;
-this problem combines choices from distinct domains into structured states.
+**Why this step is next:** Problem 12 generated choices from one catalog; this
+combines choices from distinct domains into structured states.
 
-**Likely variants:** Support a variable number of dimensions; filter invalid
-states with a previously learned predicate.
+**Likely variants:** Support a variable number of dimensions; filter states
+with a previously learned predicate.
 
-**Reuse:** Standalone state-space engine intended for reuse in Problems 12 and
-19 if its interface remains appropriate.
+**Reuse:** Intended for reuse by Problems 14, 24, and 25 when appropriate.
 
 **Source basis:** Levin Section 0.3 and Cummings Chapter 3 for Cartesian
 products; original deployment-matrix adaptation.
 
 ## Milestone 4 — Functions and mappings
 
-### 12 — State Classifier Contract
+### 14 — State Classifier Contract
 
 **Status:** Planned
 
-**Problem idea:** Audit a finite classifier that maps each declared system state
-to one of a declared collection of operational categories, and report which
-categories are actually produced.
+**Problem idea:** Audit a finite classifier from declared system states to
+declared operational categories and report the categories actually produced.
 
-**New concept:** Domain, codomain, and image of a function.
+**New concept:** Domain, codomain, and image as the inseparable contract of a
+finite function.
 
-**Reinforces:** Finite state spaces, predicates, sets, and explicit validation of
-inputs and outputs.
+**Reinforces:** Finite state spaces, predicates, sets, and input/output
+validation.
 
-**Prerequisites:** Cartesian products, set membership, and the programming idea
-of calling a function.
+**Prerequisites:** Problem 13 and the programming idea of calling a function.
 
-**Why this step is next:** The module has built a state space; this problem adds
-one mapping from those states to a second declared set.
+**Why this step is next:** The module has built a state space; this adds one
+mapping from those states to another declared set.
 
 **Likely variants:** Audit a partially specified mapping; classify user records
 instead of deployment states.
 
-**Reuse:** May consume states produced by Problem 11 without depending on how
-that product was implemented.
+**Reuse:** May consume states from Problem 13.
 
-**Source basis:** Levin Section 0.4, Cummings Chapter 8, and Hehner Chapter 3 for
-domain, codomain, and image; original classifier-contract adaptation.
+**Source basis:** Levin Section 0.4, Cummings Chapter 8, and Hehner Chapter 3;
+original classifier-contract adaptation.
 
-### 13 — Transformation Pipeline Auditor
+### 15 — Transformation Pipeline Auditor
 
 **Status:** Planned
 
@@ -447,218 +482,315 @@ domain, codomain, and image; original classifier-contract adaptation.
 transformations connected as a data-processing pipeline, including an identity
 stage.
 
-**New concept:** Function composition.
+**New concept:** Function composition and identity functions.
 
-**Reinforces:** Domains, codomains, images, total mappings, and exhaustive finite
-evaluation.
+**Reinforces:** Domains, codomains, images, and exhaustive finite evaluation.
 
-**Prerequisites:** Problem 12 and the ability to reason about the output type of
-one function as the input type of another.
+**Prerequisites:** Problem 14 and reasoning about one function's output as
+another function's input.
 
-**Why this step is next:** It keeps the finite-function model from Problem 12
-and adds exactly one structural operation between two functions.
+**Why this step is next:** It keeps the finite-function model and adds one
+structural operation between functions.
 
-**Likely variants:** Compare two pipeline orders; detect the first state for
+**Likely variants:** Compare two pipeline orders; report the first state on
 which two pipelines disagree.
 
-**Reuse:** Extends the finite function-audit representation from Problem 12.
+**Reuse:** Extends the finite function representation from Problem 14.
 
-**Source basis:** Cummings Section 8.3 and Hehner Section 3.2.2 for function
-composition; original transformation-pipeline adaptation.
+**Source basis:** Cummings Chapter 8 and Hehner Chapter 3 for composition;
+original transformation-pipeline adaptation.
 
-### 14 — Identifier Mapping Integrity Audit
+### 16 — Identifier Collision Auditor
 
 **Status:** Planned
 
-**Problem idea:** Classify a finite mapping between legacy and replacement
-identifiers according to whether values collide, destinations remain unused, or
-the mapping supports a complete reversible migration.
+**Problem idea:** Inspect a finite identifier migration and report whether two
+source identifiers ever collapse onto the same replacement identifier,
+including the colliding sources when they do.
 
-**New concept:** Injective, surjective, and bijective mappings. These properties
-are grouped because the programming task is one integrity classification and
-their contrast is the learning objective.
+**New concept:** Injective functions and information preservation.
 
-**Reinforces:** Domain, codomain, image, cardinality, and information loss.
+**Reinforces:** Domain, codomain, image, equality, and counterexamples.
 
-**Prerequisites:** Problem 12; a clear distinction between codomain and image.
+**Prerequisites:** Problem 14 and a clear distinction between inputs and
+outputs.
 
-**Why this step is next:** It adds structural quality questions to a function
-whose basic contract the student already knows how to audit.
+**Why this step is next:** It asks the first structural-quality question about
+a function, isolated from destination coverage.
 
-**Likely variants:** Construct a reverse lookup only when justified; identify
-the exact collisions or unused destination identifiers.
+**Likely variants:** Report every collision group; compare collision behavior
+before and after a normalization stage.
 
-**Reuse:** Extends Problem 12's finite mapping model and may reuse its validation
-component.
+**Reuse:** Extends Problem 14's finite mapping validation.
 
-**Source basis:** Levin Section 0.4 and Cummings Chapter 8 for injective,
-surjective, bijective, and invertible mappings; original identifier-migration
-adaptation.
+**Source basis:** Levin Section 0.4 and Cummings Chapter 8 for injectivity;
+original identifier-migration adaptation.
+
+### 17 — Migration Coverage Auditor
+
+**Status:** Planned
+
+**Problem idea:** Determine whether every declared replacement identifier is
+reached by a migration and whether the mapping supports a complete reversible
+correspondence.
+
+**New concept:** Surjective functions; bijectivity is recognized by composing
+surjectivity with the injectivity learned in Problem 16.
+
+**Reinforces:** Injectivity, codomain versus image, cardinality, and
+counterexamples.
+
+**Prerequisites:** Problems 14 and 16.
+
+**Why this step is next:** It adds destination coverage while retrieving the
+previously isolated collision property.
+
+**Likely variants:** Report every unused destination; construct a reverse lookup
+only when the audited properties justify it.
+
+**Reuse:** Extends Problems 14 and 16.
+
+**Source basis:** Levin Section 0.4 and Cummings Chapter 8 for surjectivity,
+bijectivity, and inverses; original migration-coverage adaptation.
 
 ## Milestone 5 — Relations
 
-### 15 — Compatibility Relation Registry
+### 18 — Compatibility Relation Registry
 
 **Status:** Planned
 
 **Problem idea:** Represent and query compatibility between two finite catalogs,
-such as plugins and runtime versions, where an item may be compatible with many
-items on the other side.
+such as plugins and runtime versions, where one item may relate to many items.
 
 **New concept:** Binary relations as sets of ordered pairs.
 
 **Reinforces:** Cartesian products, membership, sets, domains, and the
 distinction between a relation and a function.
 
-**Prerequisites:** Problems 11 and 12; comfort with ordered pairs.
+**Prerequisites:** Problems 13 and 14; comfort with ordered pairs.
 
-**Why this step is next:** A function allowed one output per input; this problem
-removes that restriction while retaining a precise finite pair representation.
+**Why this step is next:** A function allowed one output per input; this removes
+that restriction while retaining a precise finite pair representation.
 
-**Likely variants:** Query compatibility in the reverse direction; report all
-pairs missing from a declared compatibility matrix.
+**Likely variants:** Query in the reverse direction; report pairs missing from
+a declared compatibility matrix.
 
-**Reuse:** Standalone relation representation that may reuse Cartesian-product
-validation from Problem 11.
+**Reuse:** May reuse Cartesian-product validation from Problem 13.
 
-**Source basis:** Cummings Chapter 9 and Hehner Chapter 3 for relations as
-pairwise predicates; original plugin-compatibility adaptation.
+**Source basis:** Cummings Chapter 9 and Hehner Chapter 3 for pairwise
+relations; original plugin-compatibility adaptation.
 
-### 16 — Relation Property Auditor
-
-**Status:** Planned
-
-**Problem idea:** Inspect a relation over one finite domain and report which
-standard behavioral guarantees it satisfies, together with a violating example
-for each guarantee it fails.
-
-**New concept:** Reflexive, symmetric, antisymmetric, and transitive properties.
-They are introduced as one small classification vocabulary because all are
-independent audits over the same finite relation, and the next two problems
-depend on contrasting them.
-
-**Reinforces:** Binary relations, universal claims, implication, exhaustive
-finite checking, witnesses, and counterexamples.
-
-**Prerequisites:** Problem 15 and the quantified reasoning from Milestone 2.
-
-**Why this step is next:** Problem 15 represented a relation; this problem asks
-what global guarantees follow from the pairs it contains.
-
-**Likely variants:** Audit only one selected property and produce every
-counterexample; compare a relation with its reversed relation.
-
-**Reuse:** Extends Problem 15's finite relation representation and is intended
-for reuse by Problems 17 and 18.
-
-**Source basis:** Cummings Chapter 9 for structural properties of finite
-relations; original property-auditor adaptation.
-
-### 17 — Account Alias Classifier
+### 19 — Self-Relation Auditor
 
 **Status:** Planned
 
-**Problem idea:** Validate whether a declared “same account” relation genuinely
-divides account identifiers into non-overlapping alias groups, then expose those
-groups as a stable partition.
+**Problem idea:** Inspect a relation over one finite domain and report whether
+every item relates to itself, no item relates to itself, or neither condition
+holds, with evidence for failures.
 
-**New concept:** Equivalence relations and their correspondence with partitions.
-They are paired because constructing the classes is the operational evidence
-that the relation has the intended meaning.
+**New concept:** Reflexive and irreflexive relations as a deliberate contrast
+about self-pairs.
 
-**Reinforces:** Relation properties, set partitions, exhaustive checking, and
-canonical representation.
+**Reinforces:** Binary relations, universal claims, witnesses, and exhaustive
+checking.
 
-**Prerequisites:** Problem 16, especially reflexivity, symmetry, and
-transitivity; set membership and disjointness.
+**Prerequisites:** Problem 18 and universal quantification.
 
-**Why this step is next:** It combines a specific subset of already implemented
-relation properties into one programming abstraction with practical meaning.
+**Why this step is next:** It asks only about diagonal pairs, the smallest
+global property of a relation.
 
-**Likely variants:** Reconstruct the relation from supplied groups; identify the
-smallest evidence that malformed alias data is not an equivalence relation.
+**Likely variants:** Return all missing self-pairs; repair only the reflexive
+closure as a later extension.
 
-**Reuse:** May import the completed property checks from Problem 16 while adding
-class construction as the new work.
+**Reuse:** Extends Problem 18's finite relation representation.
 
-**Source basis:** Cummings Section 9.1 for equivalence relations, classes, and
+**Source basis:** Cummings Chapter 9 for reflexive relation checks; original
+self-relation audit.
+
+### 20 — Reciprocity and Conflict Auditor
+
+**Status:** Planned
+
+**Problem idea:** Audit whether a relation represents reciprocal compatibility
+and whether mutual pairs among distinct items violate an ordering-style
+contract.
+
+**New concept:** Symmetry and antisymmetry. They are introduced together to
+confront the common but incorrect assumption that they are opposites.
+
+**Reinforces:** Ordered pairs, implication, counterexamples, and the relation
+engine from Problem 18.
+
+**Prerequisites:** Problems 18 and 19 and the meaning of pair reversal.
+
+**Why this step is next:** It moves from self-pairs to pairs in opposite
+directions while changing no representation.
+
+**Likely variants:** Audit only symmetry and list missing reverse pairs; compare
+a relation with its inverse.
+
+**Reuse:** Extends the representation and evidence format from Problems 18–19.
+
+**Source basis:** Cummings Chapter 9 for symmetric and antisymmetric behavior;
+original reciprocity-audit adaptation.
+
+### 21 — Chained Rule Auditor
+
+**Status:** Planned
+
+**Problem idea:** Determine whether every two-step chain in a finite relation
+has the direct relationship required by the declared policy and report a broken
+chain when it does not.
+
+**New concept:** Transitive relations.
+
+**Reinforces:** Binary relations, implication, Cartesian products, witnesses,
+and counterexamples.
+
+**Prerequisites:** Problems 18–20.
+
+**Why this step is next:** Earlier properties inspected one pair or its reverse;
+this adds exactly one form of composition across two related pairs.
+
+**Likely variants:** Return every broken chain; compute a closure only in a
+later extension.
+
+**Reuse:** Extends the relation and evidence engines from Problems 18–20.
+
+**Source basis:** Cummings Chapter 9 for transitivity; original chained-policy
+adaptation.
+
+### 22 — Account Alias Classifier
+
+**Status:** Planned
+
+**Problem idea:** Validate whether a declared “same account” relation divides
+identifiers into non-overlapping alias groups and expose those groups as a
+stable partition.
+
+**New concept:** Equivalence relations and their correspondence with
+partitions. The pair is operationally inseparable because the groups are the
+observable structure produced by the relation.
+
+**Reinforces:** Reflexivity, symmetry, transitivity, sets, and exhaustive
+checking.
+
+**Prerequisites:** Problems 19–21 and set disjointness.
+
+**Why this step is next:** It composes three independently practiced relation
+properties into a useful grouping abstraction.
+
+**Likely variants:** Reconstruct the relation from supplied groups; report the
+smallest evidence that malformed aliases fail the contract.
+
+**Reuse:** Expected to import the completed property checks.
+
+**Source basis:** Cummings Chapter 9 for equivalence relations, classes, and
 partitions; original account-alias adaptation.
 
-### 18 — Dependency Order Validator
+### 23 — Dependency Order Validator
 
 **Status:** Planned
 
 **Problem idea:** Validate a declared “must not come later than” relationship
-among tasks and determine whether it behaves like a coherent partial ordering,
-without introducing graph traversal algorithms.
+among tasks as a coherent partial ordering, without introducing graph traversal
+algorithms.
 
 **New concept:** Partial orders.
 
-**Reinforces:** Reflexivity, antisymmetry, transitivity, ordered pairs, and
-counterexamples.
+**Reinforces:** Reflexivity, antisymmetry, transitivity, and counterexamples.
 
-**Prerequisites:** Problem 16 and the ability to distinguish symmetric from
-antisymmetric behavior.
+**Prerequisites:** Problems 19–21 and the distinction between symmetry and
+antisymmetry.
 
-**Why this step is next:** It recombines a different subset of known relation
-properties, contrasting ordered structure with the grouping structure from
-Problem 17.
+**Why this step is next:** It recombines a different set of known relation
+properties and contrasts ordering with the grouping structure of Problem 22.
 
-**Likely variants:** Use subset containment as the relation; distinguish a total
-order from a partial order as a later extension.
+**Likely variants:** Use subset containment as the relation; distinguish total
+from partial order in a later extension.
 
-**Reuse:** May import the property-audit engine from Problem 16. It must not add
-graph infrastructure.
+**Reuse:** Expected to import the completed relation-property checks.
 
 **Source basis:** Cummings Chapter 9 for partial orders and subset containment;
 original dependency-order adaptation.
 
-## Milestone 6 — Integrated finite models
+## Milestone 6 — Invariants and integrated finite models
 
-### 19 — Possible Worlds Policy Engine
+### 24 — State Transition Safety Auditor
+
+**Status:** Planned
+
+**Problem idea:** Given a finite state space, a validity predicate, and declared
+state transitions, report whether every transition starting from a valid state
+preserves the stated safety property, with a violating transition when it does
+not.
+
+**New concept:** Invariant preservation across transitions.
+
+**Reinforces:** Predicates, universal claims, Cartesian-product state spaces,
+relations, implication, and counterexamples.
+
+**Prerequisites:** Milestones 1–5 and the distinction between valid and merely
+representable states.
+
+**Why this step is next:** It isolates invariants in a small transition model
+before the module asks for full integration.
+
+**Likely variants:** Separate initial-state validity from transition safety;
+audit two invariants independently.
+
+**Reuse:** May consume the state-space and relation representations from
+Problems 13 and 18.
+
+**Source basis:** Hehner Chapters 4–5 for specifications and assertions;
+Parberry and Gasarch Chapter 5 for correctness reasoning; original transition-
+safety adaptation.
+
+### 25 — Possible Worlds Policy Engine
 
 **Status:** Planned
 
 **Problem idea:** Model a small configurable system as a finite space of states,
-apply several independent rules, classify valid states, represent a relationship
-among selected states, and audit properties that must remain true across the
-entire model.
+apply independent rules, classify valid states, represent transitions or other
+relationships, and audit guarantees across the complete model.
 
-**New concept:** Invariants of a finite state model.
+**New concept:** No new mathematical family. This is an integration and
+recognition challenge in which the student must select and compose previously
+implemented structures.
 
-**Reinforces:** Propositions, predicates, quantifiers, sets, Cartesian products,
-functions, relations, cardinality, exhaustive checking, and counterexamples.
+**Reinforces:** Every milestone in the module, including implication,
+quantifiers, sets, functions, relations, cardinality, invariants, exhaustive
+checking, and counterexamples.
 
-**Prerequisites:** Completion of the five preceding milestones and the ability
-to explain why exhaustive enumeration is feasible for a declared small domain.
+**Prerequisites:** Problem 24 and demonstrated understanding of the five earlier
+milestones.
 
-**Why this step is next:** It adds no new family of data structure. Instead, it
-introduces invariants as the organizing concept that makes all previous
-structures work together in one deliberately small system.
+**Why this step is next:** Invariants have already been isolated, so the final
+problem can measure integration rather than conceal a new concept inside a
+large task.
 
-**Likely variants:** Add one state attribute and measure the effect on the model;
-transfer the engine from deployment policy to a game, workflow, or access-control
-domain without naming the mathematical structures in advance.
+**Likely variants:** Add one state attribute and measure the effect; transfer
+the engine to a game, workflow, or access-control domain without naming the
+mathematical structures in advance.
 
-**Reuse:** Expected to reuse stable contracts or small engines from Problems 11,
-12, and 16 when doing so clarifies the integration. The exact reuse decision
-will be made only after those implementations have been reviewed.
+**Reuse:** Expected to reuse stable contracts or small engines when that makes
+the mathematics clearer. Exact reuse will depend on reviewed student work.
 
-**Source basis:** Hehner Chapters 4 and 5 for specifications and assertions;
-Parberry and Gasarch Chapter 5 for correctness reasoning; original integrated
-finite-world synthesis from the preceding module problems.
+**Source basis:** Hehner Chapters 4–5; Parberry and Gasarch Chapter 5; original
+finite-world synthesis of the preceding problems.
 
 ## Planned progression summary
 
 | Range | Primary focus | Intended progression |
 | --- | --- | --- |
-| 01–03 | Boolean rules | Mechanical → basic application |
-| 04–07 | Predicates and quantifiers | Basic application → composition |
-| 08–11 | Sets and state spaces | Mechanical → composition |
-| 12–14 | Functions and mappings | Basic application → interpretation |
-| 15–18 | Relations | Mechanical → composition |
-| 19 | Integrated finite model | Cross-topic within the module |
+| 01–04 | Boolean rules | Mechanical → interpretation |
+| 05–08 | Predicates and quantifiers | Basic application → composition |
+| 09–13 | Sets and state spaces | Mechanical → composition |
+| 14–17 | Functions and mappings | Basic application → composition |
+| 18–23 | Relations | Mechanical → composition |
+| 24 | Transition invariants | Basic application → cross-topic |
+| 25 | Integrated finite model | Open integration within the module |
 
-Problem 19 is the module's initial integration challenge. Whether an additional
-open problem or Boss Challenge is needed will be decided from demonstrated
-mastery rather than scheduled in advance.
+Problem 25 is the module's initial integration challenge. Whether it should be
+treated as a Boss Challenge, followed by an additional open problem, or both
+will be decided from demonstrated mastery rather than scheduled in advance.
