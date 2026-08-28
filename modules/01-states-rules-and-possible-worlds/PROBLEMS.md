@@ -105,7 +105,7 @@ The student must eventually demonstrate the ability to:
 
 ### 01 — Feature Release Gate
 
-**Status:** Active
+**Status:** Completed
 
 **Problem idea:** Implement the decision rule used by a deployment service to
 decide whether a feature may be released from a few Boolean facts such as
@@ -134,7 +134,7 @@ feature-release adaptation.
 
 ### 02 — Truth Table Reporter
 
-**Status:** Planned
+**Status:** Active
 
 **Problem idea:** Report the result of a Boolean policy for every possible
 assignment of a small declared set of flags.
@@ -149,13 +149,18 @@ assignment.
 **Why this step is next:** It changes only the scale of observation: one case
 becomes the entire small Boolean domain.
 
+**Progression evidence:** Problem 01 passed its exhaustive suite, and the
+implementation expressed the compound proposition directly and correctly. No
+intermediate remediation is needed before finite Boolean enumeration.
+
 **Likely variants:** Include named intermediate columns; increase the number of
 flags while preserving deterministic row order.
 
 **Reuse:** Its truth-assignment engine may be reused by Problems 03 and 04.
 
-**Source basis:** Levin Chapter 3 and Cummings Chapter 5 for truth tables;
-original diagnostic-tool adaptation.
+**Source basis:** Levin Section 3.1 and Cummings Sections 5.2 and 5.6 for
+systematic truth-table rows over two or more propositions; original
+diagnostic-tool adaptation.
 
 ### 03 — Policy Implication Auditor
 
