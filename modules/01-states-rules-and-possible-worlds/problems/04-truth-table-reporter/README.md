@@ -39,6 +39,16 @@ the Boolean value in the corresponding position of the assignment tuple.
 Model a truth table as an exhaustive enumeration of a finite Boolean state
 space.
 
+## Prerequisites
+
+Before attempting this challenge, complete:
+
+- Problem 02, which isolates generation of the ordered Boolean assignments;
+- Problem 03, which isolates interpretation and policy evaluation for one
+  assignment.
+
+This challenge asks you to compose those two previously practiced capabilities.
+
 ## Constraints
 
 - Use only the Python standard library.
