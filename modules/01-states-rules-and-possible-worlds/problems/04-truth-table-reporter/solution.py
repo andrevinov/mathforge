@@ -1,39 +1,27 @@
 from collections.abc import Callable
 
 
-def find_line_value(
+def build_truth_table(
     flag_names: tuple[str, ...],
-    line: tuple[bool, ...],
     policy: Callable[[dict[str, bool]], bool],
-) -> bool:
-    return policy({k: v for k, v in zip(flag_names, line)})
+) -> list[tuple[tuple[bool, ...], bool]]:
+    table: list[tuple[bool, ...]] = [()]
 
-def generate_lines(nlines: int) -> tuple[tuple[bool, ...], ...]):
-    for nline in enumerate(range(nlines)):
-        
-        
-        
+    for _ in range(len(flag_names)):
+        extended: list[tuple[bool, ...]] = []
 
-# def build_truth_table(
-#     flag_names: tuple[str, ...],
-#     policy: Callable[[dict[str, bool]], bool],
-# ) -> list[tuple[tuple[bool, ...], bool]]:
-#     # Calculate number of lines
-#     nlines = 2 ** len(flag_names)
+        for line in table:
+            extended.append(line + (False,))
+            extended.append(line + (True,))
 
-#     result = []
+        table = extended
 
-#     # Generate tuples and results
-#     for line in enumerate(lines):
-        
+    result: list[tuple[tuple[bool, ...], bool]] = []
 
+    for line in table:
+        mapping = {k: v for k, v in zip(flag_names, line)}
+        policy_value = policy(mapping)
 
-# def both_enabled(state: dict[str, bool]) -> bool:
-#     return state["search_enabled"] and state["billing_enabled"]
+        result.append((line, policy_value))
 
-
-# result = find_line_value(
-#     ("search_enabled", "billing_enabled"), (False, False), both_enabled
-# )
-
-# print(str(result) + "\n")
+    return result

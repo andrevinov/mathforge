@@ -136,7 +136,7 @@ feature-release adaptation.
 
 ### 02 — Boolean Assignment Generator
 
-**Status:** Active
+**Status:** Completed
 
 **Problem idea:** Generate every ordered tuple of Boolean values for a requested
 number of positions, without yet naming the positions or evaluating a policy.
@@ -169,11 +169,11 @@ generator adaptation.
 
 ### 03 — Policy Assignment Evaluator
 
-**Status:** Planned
+**Status:** Completed
 
-**Materialization note:** Its directory was created early at the student's
-explicit request for both preparatory challenges. Problem 02 remains the only
-active challenge.
+**Completion evidence:** The implementation correctly aligned flag names with
+one Boolean assignment and evaluated an arbitrary supplied policy. Its tests
+pass together with the rest of the completed module work.
 
 **Problem idea:** Given flag names, one aligned Boolean assignment, and a
 policy callable, construct the named state and return the policy's result.
@@ -202,7 +202,7 @@ predicates; original single-row policy adaptation.
 
 ### 04 — Truth Table Reporter
 
-**Status:** Revised
+**Status:** Completed
 
 **Problem idea:** Report the result of a Boolean policy for every possible
 assignment of a small declared set of flags.
@@ -224,6 +224,11 @@ student's difficulty showed that it combined multiple unpracticed programming
 operations, so it was deferred and preceded by two diagnostic steps. The
 student's existing draft is preserved in its new location.
 
+**Completion evidence:** The implementation composes ordered Boolean-state
+generation with named policy evaluation and passes all 14 challenge tests. The
+student identified the `2^n` row count; review corrected the initial
+polynomial-time estimate to the output-sensitive `Theta(n * 2^n)` bound.
+
 **Likely variants:** Include named intermediate columns; increase the number of
 flags while preserving deterministic row order.
 
@@ -236,7 +241,7 @@ diagnostic-tool adaptation.
 
 ### 05 — Policy Implication Auditor
 
-**Status:** Planned
+**Status:** Active
 
 **Problem idea:** Determine whether satisfying one finite Boolean policy always
 guarantees another and report a state that disproves the guarantee when it
@@ -253,10 +258,17 @@ same assignment.
 **Why this step is next:** The student already knows every row of a policy; this
 adds one directional claim between two policies.
 
+**Progression evidence:** Problem 04 demonstrated correct exhaustive generation
+and policy evaluation. The next useful increment is to interpret a particular
+relationship between two policy results and return evidence when that
+relationship fails, while continuing to exercise the same finite-state engine.
+
 **Likely variants:** Audit the reverse implication; classify a condition as
 necessary, sufficient, both, or neither.
 
-**Reuse:** May import the truth-assignment engine from Problem 04.
+**Reuse:** Conceptually reuses and may adapt the truth-assignment engine from
+Problem 04. The challenge remains standalone so that cross-directory packaging
+does not distract from the mathematical relationship.
 
 **Source basis:** Levin Section 0.2 and Cummings Chapter 5 for implications and
 counterexamples; original policy-contract adaptation.
